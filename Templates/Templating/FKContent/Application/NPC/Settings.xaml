@@ -1,0 +1,157 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Application.NPC.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+     xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+                      
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300" Width="400" Height="340">
+    <r:BasicValueTemplate.Resources>
+        <ResourceDictionary>
+            <c:CImageChecked x:Key="ImageCheck"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:BasicValueTemplate.Resources>
+
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left"  Background="Transparent">
+        <StackPanel Visibility="Collapsed" x:Name="AddSNOActors" Width="400" Height="330" Orientation="Vertical" Margin="0,5,10,0">
+            <StackPanel Width="400" Height="33" HorizontalAlignment="Left" Orientation="Horizontal">
+                <StackPanel Width="340" Height="35" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border CornerRadius="3" Height="30" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Border.Child>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="SetWidth"  Height="20" Width="305" VerticalScrollBarVisibility="Disabled" Text="Search for actor" Background="Transparent" 
+                                           Foreground="#646464" FontFamily="Gautami"  FontSize="12px" BorderThickness="0" Margin="2,0,0,0" TextAlignment="Center" />
+                                    <Image Source="/Images/FK/search.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                                </StackPanel>
+                            </Border.Child>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+                <StackPanel >
+                    <Border Cursor="Hand" Width="60" Height="30" Background="White" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Margin="0,2,0,0" >
+                        <TextBlock Height="16" Text="Go back" Background="Transparent"  Cursor="Hand" 
+                                    Foreground="#646464" FontFamily="Gautami" FontSize="12px" Margin="2,0,0,0" TextAlignment="Center" />
+                    </Border>
+                    
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="MenuContainer" Visibility="Collapsed" >
+                <Border BorderBrush="#cccccc" BorderThickness="1" CornerRadius="3" Background="White">
+                    <ScrollViewer Width="372" MaxHeight="200" Margin="0,0,0,10" x:Name="Items">
+                        <StackPanel x:Name="ItemsChildren" Orientation="Vertical" Width="372" >
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+            
+            <StackPanel x:Name="AddedItems" Visibility="Visible">
+                <StackPanel Orientation="Vertical">
+                    <Border Width="400" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,20,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="400" Orientation="Horizontal">
+                                <StackPanel Width="350">
+                                    <TextBlock Text="Added Actors" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="These actors has been added to the filter" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel Height="200" Margin="0,0,0,0" x:Name="AddedItemsContainer" />
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel x:Name="Data" Width="400" Height="330" Orientation="Vertical" Margin="0,5,10,0" >
+            <ScrollViewer Height="320" Margin="0,10,0 ,0">
+                <StackPanel>
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,0,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="350">
+                                    <TextBlock Text="Enable" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="This will enable the alert for" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image Source="{Binding DataObject.IDesignHelper.DropDown.Data.Enabled, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" RenderTransformOrigin="0.5,0.615"/>
+                                 </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="350">
+                                    <TextBlock Text="Use sounds" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="Enable this and set a sound to be played once found" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image Source="{Binding DataObject.IDesignHelper.DropDown.Data.SoundEnabled, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border x:Name="Sounds" Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="200">
+                                    <TextBlock Text="Sound File" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock x:Name="SoundFile" Text="Manage the sound for this actor group" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="170" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                    <ComboBox Width="170" FontFamily="Segoe UI" FontSize="10px" ItemsSource="{Binding DataObject.IDesignHelper.DropDown.Data.AvailableSounds}" DisplayMemberPath="Name" SelectedValuePath="Identifier" SelectedValue="{Binding DataObject.IDesignHelper.DropDown.Data.SoundId}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="350">
+                                    <TextBlock Text="Use Overlay" Foreground="#464646" FontFamily="../../../Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="Enable to show it on the overlay. Settings can be found at next page" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image Source="{Binding DataObject.IDesignHelper.DropDown.Data.UseOverlay, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0" x:Name="Modifier">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="320">
+                                    <TextBlock Text="Actor SNO ID" Foreground="#464646" FontFamily="../../../Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="Select which actors this will trigger for" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="50" Height="25">
+                                    <Border Width="50" Cursor="Hand" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White"  >
+                                        <Border.ToolTip>
+                                            <TextBlock Text="Set a sound" />
+                                        </Border.ToolTip>
+                                        <Border.Child>
+                                            <TextBlock Text="Manage" Height="15" TextAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px"  />
+                                        </Border.Child>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </StackPanel>
+</r:BasicValueTemplate>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Skillbar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:l="clr-namespace:FindersKeepers.Templates.Mainbar"
+      xmlns:se="clr-namespace:FindersKeepers.Helpers"
+      mc:Ignorable="d" 
+      Width="510" Height="64" Canvas.Top="112" Canvas.Left="434">
+    <UserControl.Resources>
+        <l:VisibilityConverter x:Key="VisConverter" />
+    </UserControl.Resources>
+
+    <ItemsControl ItemsSource="{Binding SkillItems}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"  />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate >
+                <DataTemplate>
+                    <Border Width="64" Height="64"  Margin="0,0,10,0">
+                        <se:OutlinedTextBlock FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="24" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="{Binding Value}" Tag="0" StrokeThickness="2" Fill="White" Stroke="Black" Visibility="{Binding Value, Converter={StaticResource VisConverter}}" />
+                    </Border>
+            </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+</UserControl>

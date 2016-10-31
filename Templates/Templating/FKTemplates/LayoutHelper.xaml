@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Templating.FKTemplates.LayoutHelper"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FindersKeepers.Templates.Templating.FKTemplates"
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      mc:Ignorable="d" 
+      Width="634" Height="492">
+
+    <UserControl.Resources>
+        <ResourceDictionary >
+            <c:CColorConverter x:Key="ColorConverter"  />
+            <c:CVisibility x:Key="Visibility"/>
+            <c:CActive x:Key="Active"/>
+            <c:CWidthConverter x:Key="WidthConverter"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <ContentControl Height="50" Content="{Binding HeaderControl}"/>
+
+        <StackPanel Orientation="Horizontal">
+            <ContentControl x:Name="MainContent" Width="{Binding IDesignHelper.Settings.UseSideControl, Converter={StaticResource WidthConverter}}" Height="442" Content="{Binding MainControl}"/>
+            <ContentControl Width="176" Height="442" Content="{Binding SideControl}" Visibility="{Binding IDesignHelper.Settings.UseSideControl, Converter= {StaticResource Visibility}}"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Overlay.D3OverlayControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FindersKeepers.Templates.Overlay"
+      xmlns:i="clr-namespace:FindersKeepers"
+       xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <c:CMarginMenuVisability x:Key="Visability" />
+        <i:MediaColorConverter x:Key="ColorConverter" />
+        <i:MediaBrushConverter x:Key="BrushConverter" />
+    </UserControl.Resources>
+
+    <Grid Visibility="{Binding Account.PlayerLoaded, Converter={StaticResource Visability}}">
+        <ItemsControl ItemsSource="{Binding FKControls}"  x:Name="TooltipObject">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas Width="1600" Height="1200"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemContainerStyle>
+            <Style TargetType="{x:Type ContentPresenter}">
+                <Setter Property="Canvas.Left" Value="{Binding UIRect.X}" />
+                <Setter Property="Canvas.Right" Value="{Binding UIRect.XR}" />
+                <Setter Property="Canvas.Top" Value="{Binding UIRect.Y}" />
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+        <ItemsControl.ItemTemplate >
+            <DataTemplate>
+                <ContentPresenter Content="{ Binding Control}" Width="{Binding UIRect.Width}" Height="{Binding UIRect.Height}" />
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+        <ItemsControl ItemsSource="{Binding Tooltips}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Width="2112" Height="1200"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="{x:Type ContentPresenter}">
+                    <Setter Property="Canvas.Left" Value="{Binding X}" />
+                    <Setter Property="Canvas.Top" Value="{Binding Y}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate >
+                <DataTemplate>
+                    <Canvas  Visibility="Visible">
+                        <Border Width="{Binding Width}" Height="{Binding Height}" BorderBrush="{Binding BorderBrush, Converter={StaticResource BrushConverter}}" BorderThickness="{Binding BorderSize}" 
+                                CornerRadius="{Binding CornerRadius}" >
+                            <Border.Background>
+                                <SolidColorBrush Opacity="{Binding Opacity}" Color="{Binding Background, Converter={StaticResource ColorConverter}}" />
+                            </Border.Background>
+                            <TextBlock Text="{Binding Text}" FontFamily="DinPro" TextAlignment="Center" FontSize="15" Foreground="White"  TextWrapping="Wrap"  />
+                        </Border>
+                    </Canvas>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

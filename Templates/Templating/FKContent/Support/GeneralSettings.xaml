@@ -1,0 +1,168 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Support.GeneralSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400" Width="400" Height="380" Margin="20,20,0,0">
+    
+    <r:BasicValueTemplate.Resources>
+        <ResourceDictionary>
+            <c:CImageChecked x:Key="CImageChecked" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:BasicValueTemplate.Resources>
+
+    <ScrollViewer >
+        <StackPanel  x:Name="Data" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical"  >
+
+            
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,0,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Use the Game Overlay " Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="If disabled all in game overlay features will be disabled" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.UseOverlayInGame, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Use alternative overlay " Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Will not host the overlay in D3, enable if you run different Windows users" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.UseAlternativeOverlay, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Group Overlay and Sounds" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="If the same item or monster appear at the same time, only play once" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.GroupRActors, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Automatic start FK on launch" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Automatic start FK when launching, does not work for multiboxers" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.AutomaticStartFK, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Minimize FK to tray" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Minimize FK to tray when running and pressing minimize" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.MinimizeToTray, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Update" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Allow FindersKeepers to look for updates" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.AllowUpdates, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Output found legendaries" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Will create a file containing all legendaries found" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.WriteToFile, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Error log" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Allow FindersKeepers to send error logs (no personal information will be sent)" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.SendErrorLogs, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Debug mode" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="FK will run in debug mode (Item tracker will be disabled) " Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.DebugMode, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Compress Config files" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Disable for easier XML reading" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding Settings.CompressXMLFiles, Converter= { StaticResource CImageChecked}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</r:BasicValueTemplate>

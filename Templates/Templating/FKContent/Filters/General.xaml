@@ -1,0 +1,159 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Filters.General"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+      mc:Ignorable="d" 
+      Width="400" Height="340">
+<!-- 340 height-->
+    <r:BasicValueTemplate.Resources>
+        <ResourceDictionary>
+            <c:CImageChecked x:Key="ImageCheck"/>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:BasicValueTemplate.Resources>
+
+    <ScrollViewer>
+        <StackPanel x:Name="Data" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" >
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Width="370">
+                        <TextBlock Text="Item Quality" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                    <TextBlock Text="Set the quality for the filter for which it will trigger" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,0"  FontWeight="Normal" FontSize="10px" />
+                </StackPanel>
+                <StackPanel Width="370">
+                    <Grid Width="361" Height="10" HorizontalAlignment="Left" Background="#e9e9e9" Margin="0,8,0,8">
+                        <StackPanel Orientation="Horizontal" x:Name="SetQualities" Cursor="Hand">
+                                <Border Width="89.25" Background="#3f3f3f" Margin="0,0,1,0" MouseEnter="SetQuality" MouseLeave="ResetQuality" MouseDown="ChangeQuality" />
+                                <Border Width="89.25" Background="#5883ff" Margin="0,0,1,0" MouseEnter="SetQuality"  MouseLeave="ResetQuality" MouseDown="ChangeQuality" />
+                                <Border Width="89.25" Background="#ecb82c" Margin="0,0,1,0" MouseEnter="SetQuality"  MouseLeave="ResetQuality" MouseDown="ChangeQuality"/>
+                                <Border Width="91.25" Background="#ff995b" Margin="0,0,1,0" MouseEnter="SetQuality"  MouseLeave="ResetQuality" MouseDown="ChangeQuality"/>
+                    </StackPanel>
+                    </Grid>
+                    <Grid Width="361" Height="15" HorizontalAlignment="Left" Margin="0,2,0,8">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="89.25" TextAlignment="Center" Text="White" Margin="0,0,1,0" FontFamily="Gautami" FontSize="11px" Foreground="Gray" />
+                            <TextBlock Width="89.25" TextAlignment="Center" Text="Magic" Margin="0,0,1,0"  FontFamily="Gautami" FontSize="11px" Foreground="Gray" />
+                            <TextBlock Width="89.25" TextAlignment="Center" Text="Rare" Margin="0,0,1,0" FontFamily="Gautami" FontSize="11px" Foreground="Gray" />
+                            <TextBlock Width="91.25" TextAlignment="Center" Text="Legendary / Set" Margin="0,0,1,0" FontFamily="Gautami" FontSize="11px" Foreground="Gray" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Width="370">
+                        <TextBlock Text="Filter Name" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                    <TextBlock Text="You can set this to whatever you like" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,0"  FontWeight="Normal" FontSize="10px" />
+                </StackPanel>
+                <StackPanel Width="370">
+                        <Grid Width="370" Height="25" HorizontalAlignment="Left" Margin="0,8,0,8">
+                            <Border Height="25" CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White">
+                                <Border.Child>
+                                    <TextBox VerticalAlignment="Center" x:Name="FilterName" VerticalScrollBarVisibility="Disabled" Width="350" Text="{Binding DataObject.Filter.Name, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" Foreground="#646464" FontFamily="Gautami"  FontSize="12px" BorderThickness="0" />
+                                </Border.Child>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+            </StackPanel>
+        </Border>
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Disable when gambling at Kadala" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Disable will make the sound / overlay not visible for gambled items" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image x:Name="Kadala" Source="{Binding DataObject.Filter.DisableForKadala, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Item Types" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Alerts for all itemtypes for the selected quality instead of Item Type filter" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding DataObject.Filter.OverrideFilter, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Only alert on Ancient items" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Enable to only make it alert on Ancient items" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding DataObject.Filter.OnlyAncient, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Ancient items" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Enable to reveal if an item is ancient or not" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding DataObject.Filter.ShowIfAncient, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Item Overlay" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Allow this filter to show the Item overlay" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image Source="{Binding DataObject.Filter.OverlayIngame, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            
+          
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="320">
+                            <TextBlock Text="Item Overlay Popup Timer" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Set how long the overlay will be shown (in milliseconds)" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="50" Height="25">
+                            <Border Height="25" CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White">
+                                <Border.Child>
+                                    <TextBox VerticalAlignment="Center" x:Name="OverlayTimer" MaxLength="5" VerticalScrollBarVisibility="Disabled" TextAlignment="Center"  Width="40" Text="{Binding DataObject.Filter.OverlayTimer, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" />
+                                </Border.Child>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            </StackPanel>
+    </ScrollViewer>
+</r:BasicValueTemplate>

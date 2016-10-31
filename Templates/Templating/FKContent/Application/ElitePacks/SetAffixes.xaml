@@ -1,0 +1,157 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Application.ElitePacks.SetAffixes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FindersKeepers.Templates.Application.ElitePacks"
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="457" Width="457" Height="340">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <c:CImageChecked x:Key="ImageCheck"/>
+            <c:CColorConverter x:Key="CColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" >
+        <Border BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Grid Height="50" Width="457" >
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/FK/mapR.png" Opacity="0.8"/>
+                </Grid.Background>
+                    <Grid x:Name="Preview" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Border Background="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.Background, Converter= {StaticResource CColorConverter}}" BorderBrush="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.BorderColor, Converter= {StaticResource CColorConverter}}" BorderThickness="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.BorderSize}" Padding="5,0,5,0" >
+                            <Label Content="{Binding DataObject.IDesignHelper.DropDown.Data.Name}" FontFamily="/Images/DINPro.otf#DINPro Regular" Foreground="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.Foreground, Converter= {StaticResource CColorConverter}}" FontSize="12" HorizontalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                </Grid>
+        </Border>
+    </StackPanel>
+
+    <ScrollViewer Height="270" Margin="0,15,0,0" >
+        <StackPanel Orientation="Vertical" Margin="15,0,0,0">
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="370" Orientation="Horizontal">
+                            <StackPanel Width="350">
+                                <TextBlock Text="Enable Affix" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="This will the enable the affix" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="20" Height="25">
+                                <Image Source="{Binding DataObject.IDesignHelper.DropDown.Data.Enabled, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="310">
+                                <TextBlock Text="Border Size" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the border size, this will be scaled with your D3 resolution" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="60" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19">
+                                                <TextBox TextWrapping="Wrap" x:Name="BorderSize" Width="35" VerticalScrollBarVisibility="Disabled" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.BorderSize, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxLength="2"
+                                                 VerticalAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" TextAlignment="Center" />
+                                                <TextBlock Text="px" Foreground="#646464" FontFamily="Gautami" FontSize="11px" Margin="0,3,0,0" Width="20"/>
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="275">
+                                <TextBlock Text="Border Color" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the border color" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="100" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19" >
+                                                <TextBlock Text="#" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="5,3,0,0" Width="10"/>
+                                                <TextBox x:Name="BorderColor"  Width="55" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.BorderColor, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" VerticalScrollBarVisibility="Disabled" MaxLength="6"
+                                                VerticalAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0">
+                                                </TextBox>
+                                                <Border x:Name="BorderColorBG" CornerRadius="3" Width="15" Height="15" Background="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.BorderColor, Converter={StaticResource CColorConverter}}" Margin="0,0,5,0" MouseDown="OpenPicker" />
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="275">
+                                <TextBlock Text="Background" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the background color" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="100" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19" >
+                                                <TextBlock Text="#" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="5,3,0,0" Width="10"/>
+                                                <TextBox x:Name="Background"  Width="55" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.Background, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" VerticalScrollBarVisibility="Disabled" MaxLength="6"
+                                                   VerticalAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" />
+                                                <Border x:Name="BackgroundColorBG" CornerRadius="3" Width="15" Height="15" Background="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.Background, Converter={StaticResource CColorConverter}}" Margin="0,0,5,0" />
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="275">
+                                <TextBlock Text="Font color" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the font color" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="100" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19" >
+                                                <TextBlock Text="#" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="5,3,0,0" Width="10"/>
+                                                <TextBox x:Name="Foreground"  Width="55" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.Foreground, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" VerticalScrollBarVisibility="Disabled" MaxLength="6"
+                                                  VerticalAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" />
+                                                <Border x:Name="FontColorBG" CornerRadius="3" Width="15" Height="15" Background="{Binding DataObject.IDesignHelper.DropDown.Data.Styles.Foreground, Converter={StaticResource CColorConverter}}" Margin="0,0,5,0"  />
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+    </ScrollViewer>
+    </StackPanel>
+</r:BasicValueTemplate>

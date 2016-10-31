@@ -1,0 +1,237 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Filters.MultiboxFilter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+    mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="400" Width="400" Height="340">
+
+    <r:BasicValueTemplate.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:BasicValueTemplate.Resources>
+
+    <ScrollViewer>
+        <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" >
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Use voice" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Have a voice instead of a sound reading the legendary name" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image x:Name="UseofVoice" Source="/Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand"  RenderTransformOrigin="0.5,0.615"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Use Sounds" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Enable or disable your in game sound" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image x:Name="DefaultSoundEnable" Source="/Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="350">
+                            <TextBlock Text="Use Multibox Sounds" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <TextBlock Text="Enable or disable if you want to setup different sound for your accounts" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                        </StackPanel>
+                        <StackPanel Width="20" Height="25">
+                            <Image x:Name="MultiboxSound" Source="/Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <StackPanel x:Name="DefaultSounds" Visibility="Collapsed">
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="370" Orientation="Horizontal">
+                            <StackPanel Width="200">
+                                <TextBlock Text="Default Filter Sound" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock x:Name="SoundFile" Text="Manage the sound for this filter" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="170" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                <ComboBox Width="170" FontFamily="Segoe UI" FontSize="12px" SelectedIndex="0">
+                                    <ComboBoxItem>No sound selected</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <ItemsControl ItemsSource="{Binding DataObject.Filter.Sound}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Width="370" Orientation="Horizontal">
+                                    <StackPanel Width="200">
+                                        <TextBlock Text="{Binding GetAccount.Nickname}" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                        <TextBlock x:Name="SoundFile" Text="Manage the sound for this account" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                    </StackPanel>
+                                    <StackPanel Width="170" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                        <ComboBox Width="170" FontFamily="Segoe UI" FontSize="10px" ItemsSource="{Binding AvailableSounds}" DisplayMemberPath="Name" SelectedValuePath="Identifier" SelectedValue="{Binding SoundId}"/>
+
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+
+            <StackPanel x:Name="MultiboxSounds" Visibility="Collapsed">
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,20,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="292">
+                                <TextBlock x:Name="Header_1" Text="Multibox Sound #1" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="" x:Name="SoundName_0" Foreground="#ff9446" FontFamily="Segoe UI" Margin="0,2,0,10" FontSize="10px" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Width="110" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                <Border x:Name="ID_1" Cursor="Hand" Width="25" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White" Margin="0,0,2,0" >
+                                    <Border.ToolTip>
+                                        <TextBlock Text="Test sound" />
+                                    </Border.ToolTip>
+                                    <Border.Child>
+                                        <Image Source="/Images/FK/Icons/play.png" Width="10" Height="10" />
+                                    </Border.Child>
+                                </Border>
+
+                                <Border Height="25" Width="50" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White">
+                                <Border.ToolTip>
+                                    <TextBlock Text="sound.wav" />
+                                </Border.ToolTip>
+                                <Border.Child>
+                                        <TextBlock Cursor="Hand" x:Name="Sound_0"  VerticalAlignment="Center" Text="Manage" TextAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px"  />
+                                </Border.Child>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="292">
+                                <TextBlock  x:Name="Header_2" Text="Multibox Sound #2" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SoundName_1" Text=""  Foreground="#ff9446" FontFamily="Segoe UI" Margin="0,2,0,10" FontSize="10px" />
+                            </StackPanel>
+                              </StackPanel>
+                        <StackPanel Width="110" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                <Border x:Name="ID_2" Cursor="Hand" Width="25" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White" Margin="0,0,2,0" >
+                                    <Border.ToolTip>
+                                        <TextBlock Text="Test sound" />
+                                    </Border.ToolTip>
+                                    <Border.Child>
+                                        <Image Source="/Images/FK/Icons/play.png" Width="10" Height="10" />
+                                    </Border.Child>
+                                </Border>
+                                <Border Width="50" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White">
+                                <Border.ToolTip>
+                                    <TextBlock Text="sound.wav" />
+                                </Border.ToolTip>
+                                <Border.Child>
+                                        <TextBlock x:Name="Sound_1" Cursor="Hand" Text="Manage" VerticalAlignment="Center" TextAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px"    />
+                                </Border.Child>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="292">
+                                <TextBlock x:Name="Header_3" Text="Multibox Sound #3" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="SoundName_2" Text="" Foreground="#ff9446" FontFamily="Segoe UI" Margin="0,2,0,10" FontSize="10px" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Width="110" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                <Border x:Name="ID_3" Cursor="Hand" Width="25" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White" Margin="0,0,2,0">
+                                    <Border.ToolTip>
+                                        <TextBlock Text="Test sound" />
+                                    </Border.ToolTip>
+                                    <Border.Child>
+                                        <Image Source="/Images/FK/Icons/play.png" Width="10" Height="10" />
+                                    </Border.Child>
+                                </Border>
+                                <Border Width="50" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White">
+                                <Border.ToolTip>
+                                    <TextBlock Text="sound.wav" />
+                                </Border.ToolTip>
+                                <Border.Child>
+                                        <TextBlock x:Name="Sound_2"  Cursor="Hand" Text="Manage" VerticalAlignment="Center" TextAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px"  />
+                                </Border.Child>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Width="370" Orientation="Horizontal">
+                        <StackPanel Width="292">
+                                <TextBlock x:Name="Header_4" Text="Multibox Sound #4" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="SoundName_3" Text="" Foreground="#ff9446" FontFamily="Segoe UI" Margin="0,2,0,10" FontSize="10px" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Width="110" Height="25" VerticalAlignment="Top" Margin="0,5,0,0" Orientation="Horizontal">
+                                <Border x:Name="ID_4" Cursor="Hand" Width="25" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White" Margin="0,0,2,0">
+                                    <Border.ToolTip>
+                                        <TextBlock Text="Test sound" />
+                                    </Border.ToolTip>
+                                    <Border.Child>
+                                        <Image Source="/Images/FK/Icons/play.png" Width="10" Height="10" />
+                                    </Border.Child>
+                                </Border>
+                                <Border Width="50" Height="25" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White">
+                                <Border.ToolTip>
+                                    <TextBlock Text="sound.wav" />
+                                </Border.ToolTip>
+                                <Border.Child>
+                                        <TextBlock x:Name="Sound_3" Text="Manage"  Cursor="Hand"  VerticalAlignment="Center" TextAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px"  />
+                                </Border.Child>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</r:BasicValueTemplate>

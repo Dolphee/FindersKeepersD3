@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Rifts.GemUpgrade"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:se="clr-namespace:FindersKeepers.Helpers"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300" Width="442" Height="271" Canvas.Top="670" Canvas.Left="73">
+
+    <Canvas x:Name="Scroll" Width="442" Height="271" ClipToBounds="true">
+        <Canvas x:Name="Items" Width="442" Height="271" >
+            
+        </Canvas>
+    </Canvas>
+</UserControl>

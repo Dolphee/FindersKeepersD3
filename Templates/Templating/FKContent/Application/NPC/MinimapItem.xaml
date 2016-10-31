@@ -1,0 +1,212 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Application.NPC.MinimapItem"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="457" Width="457" Height="340" SnapsToDevicePixels="True">
+    <r:BasicValueTemplate.Resources>
+        <ResourceDictionary>
+            <c:CColorConverter x:Key="CColorConverter" />
+            <c:CProcent x:Key="CProcent" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:BasicValueTemplate.Resources>
+
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" >
+        <Border BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Grid Height="55" Width="457" >
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/FK/mapR.png"/>
+                </Grid.Background>
+                <Canvas RenderOptions.EdgeMode="Unspecified"  x:Name="Preview" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="false" Width="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Width, UpdateSourceTrigger=PropertyChanged}" Height="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Height, UpdateSourceTrigger=PropertyChanged}">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="45" />
+                            <ScaleTransform ScaleX="-1" />
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+
+                </Canvas>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Height="270" Margin="0,15,0,0" >
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,0,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="280">
+                                <TextBlock Text="Shape" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the Shape" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="95" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <ComboBox x:Name="ShapeType" Width="85" SelectedIndex="0" SelectionChanged="Update" ItemsSource="{Binding ItemShapes}" SelectedItem="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Shape}" />
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="310">
+                                <TextBlock Text="Width" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the width, this will be scaled with your D3 resolution" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="60" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19">
+                                                <TextBox TextChanged="UpdateShape" TextWrapping="Wrap" x:Name="SetWidth" Width="35" VerticalScrollBarVisibility="Disabled" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Width, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxLength="2"
+                                                  VerticalAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" TextAlignment="Center" />
+                                                <TextBlock Text="px" Foreground="#646464" FontFamily="Gautami" FontSize="11px" Margin="0,3,0,0" Width="20"/>
+                                            </StackPanel>
+                                                      </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="310">
+                                <TextBlock Text="Height" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the height, this will be scaled with your D3 resolution" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="60" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19">
+                                                <TextBox TextChanged="UpdateShape" VerticalScrollBarVisibility="Disabled" Width="35" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Height, UpdateSourceTrigger=PropertyChanged}" Background="Transparent"  MaxLength="2"
+                                                     VerticalAlignment="Center" Foreground="#646464"  FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" TextAlignment="Center" />
+                                                <TextBlock Text="px" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="0,3,0,0" Width="20"/>
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="310">
+                                <TextBlock Text="Opacity" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the shape's opacity" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="60" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19">
+                                                <TextBox TextChanged="UpdateShape" AllowDrop="False" VerticalScrollBarVisibility="Disabled" Width="35" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Opacity, Converter={StaticResource CProcent}, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxLength="3"
+                                                   VerticalAlignment="Center"   Foreground="#646464" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" TextAlignment="Center" />
+                                                <TextBlock Text="%" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="0,3,0,0" Width="20"/>
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="310">
+                                <TextBlock Text="Stroke Thickness" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the stroke thickness, this will be scaled with your D3 resolution" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="60" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19">
+                                                <TextBox TextChanged="UpdateShape" AllowDrop="False" x:Name="SetStrokeThickness" VerticalScrollBarVisibility="Disabled" Width="35" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.StrokeThickness, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" MaxLength="2"
+                                                   VerticalAlignment="Center"   Foreground="#646464"  FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" TextAlignment="Center" />
+                                                <TextBlock Text="px" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="0,3,0,0" Width="20"/>
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="275">
+                                <TextBlock Text="Background" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the background for the shape" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="100" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19">
+                                                <TextBlock Text="#" VerticalAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="5,3,0,0" Width="10"/>
+                                                <TextBox TextChanged="UpdateShape" x:Name="SetFill" VerticalAlignment="Center" Width="55" Background="Transparent" VerticalScrollBarVisibility="Disabled" MaxLength="6"
+                                                    Foreground="#646464" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Fill, UpdateSourceTrigger=PropertyChanged}" FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0"/>
+                                                <Border x:Name="FillColor" CornerRadius="3" Width="15" Height="15" Background="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Fill, Converter={StaticResource CColorConverter}, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,5,0" />
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="385" Orientation="Horizontal">
+                            <StackPanel Width="275">
+                                <TextBlock Text="Stroke color" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set the stroke color for the shape" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="100" Height="25" Orientation="Horizontal">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Border CornerRadius="3" BorderThickness="1" BorderBrush="#cccccc" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Border.Child>
+                                            <StackPanel Orientation="Horizontal" Height="19" >
+                                                <TextBlock Text="#" Foreground="#646464" FontFamily="Gautami"  FontSize="11px" Margin="5,3,0,0" Width="10"/>
+                                                <TextBox TextChanged="UpdateShape" x:Name="SetStroke"  Width="55" Text="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Stroke, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" VerticalScrollBarVisibility="Disabled" MaxLength="6"
+                                                    VerticalAlignment="Center" Foreground="#646464"  FontFamily="Gautami"  FontSize="11px" BorderThickness="0" Margin="2,0,0,0" />
+                                                <Border x:Name="StrokeColor" CornerRadius="3" Width="15" Height="15" Background="{Binding DataObject.IDesignHelper.DropDown.Data.Shape.Stroke, Converter={StaticResource CColorConverter}, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,5,0"  />
+                                            </StackPanel>
+                                        </Border.Child>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+               
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </StackPanel>
+</r:BasicValueTemplate>

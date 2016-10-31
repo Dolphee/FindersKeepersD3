@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.AccountManager"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FindersKeepers.Templates"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"  Height="492" Width="634" SnapsToDevicePixels="true" UseLayoutRounding="True">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./../Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="./../Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <Border BorderThickness="0,0,0,1" BorderBrush="#eeeeee" MouseDown="Move" Background="Transparent">
+            <StackPanel x:Name="TopHeader" Width="634" Height="50" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <StackPanel Orientation="Horizontal" Width="562">
+                        <StackPanel Orientation="Horizontal" Width="562">
+                            <Image Source="./../Images/FK/Icons/browseActive.png" Width="16" Height="16" Margin="0,3,0,0" />
+                            <Label x:Name="xMenu" Content="Account Manager" FontFamily="./../Images/DINPro.otf#DINPro Regular" Height="30" Margin="10,7,0,0" FontSize="11" Foreground="#5b90d7" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Width="52" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Border Width="25" Height="25" Cursor="Hand" Margin="0,0,2,0" MouseEnter="MiniMize" MouseLeave="MiniMizeOut"  Background="Transparent" >
+                            <Border.ToolTip>
+                                <Label Content="Minimize Finderskeepers" />
+                            </Border.ToolTip>
+                            <Image Source="./../Images/FK/Icons/minimize.png" Width="8" Height="8" Margin="2,10,0,0"/>
+                        </Border>
+
+                        <Border Width="25" Height="25" Background="#ff3c3c" Cursor="Hand" MouseDown="CloseFK" >
+                            <Border.ToolTip>
+                                <Label Content="Exit Finderskeepers and save your progress" />
+                            </Border.ToolTip>
+                            <Image Source="./../Images/FK/Icons/closing.png" Width="8" Height="8" Margin="1,1,0,0"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Width="635" Margin="0,0,0,0" Height="442" Background="#fff">
+            <StackPanel x:Name="TopMenu" Width="635" Height="60" Background="#f9f9f9" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Grid Width="250" Height="33" Background="Transparent" Margin="35,0,0,0">
+                    <StackPanel x:Name="IconMenu" Orientation="Horizontal" Cursor="Hand">
+                        <StackPanel>
+                            <Border Width="35" Height="32" BorderBrush="#e9e9e9" Background="#ffffff" BorderThickness="1,1,0,1" CornerRadius="4,0,0,4">
+                                <Image Source="./../Images/FK/Icons/ItemTrackerActive.png" Width="14" Height="14" />
+                            </Border>
+                            <Border Width="35" Height="2" BorderBrush="#219129"  BorderThickness="0,0,3,2" CornerRadius="0,0,0,3" Margin="0,-2,0,0" />
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Border Width="35" Height="32" BorderBrush="#e9e9e9" Background="#f0f0f0" BorderThickness="0,1,0,1" CornerRadius="0">
+                                <Image Source="./../Images/FK/Icons/ExperienceActive.png" Width="14" Height="14" />
+                            </Border>
+                            <Border Width="35" Height="2" BorderBrush="#3dadf5"  BorderThickness="0,0,0,3" CornerRadius="0,0,0,0" Margin="0,-2,0,0" />
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Border Width="35" Height="32" BorderBrush="#e9e9e9" Background="#f0f0f0" BorderThickness="0,1,0,1" CornerRadius="0">
+                                <Image Source="./../Images/FK/Icons/BrowseActiveE.png" Width="14" Height="14" />
+                            </Border>
+                            <Border Width="35" Height="2" BorderBrush="#ff3de6"  BorderThickness="0,0,3,2" CornerRadius="0,0,0,0" Margin="0,-2,0,0" />
+                         </StackPanel>
+
+                        <StackPanel>
+                            <Border Width="35" Height="32" BorderBrush="#e9e9e9" Background="#f0f0f0" BorderThickness="0,1,1,1" CornerRadius="0,4,4,0">
+                                <Image Source="./../Images/FK/Icons/ItemTracker.png" Width="14" Height="14" />
+                            </Border>
+                            <Border Width="35" Height="2" BorderBrush="#f84358"  BorderThickness="0,0,3,2" CornerRadius="0,0,0,0" Margin="0,-2,0,0" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Width="150" x:Name="IconMenuRight" HorizontalAlignment="Right" Orientation="Horizontal" Margin="80,0,0,0">
+                    <Image Tag="ExperienceOverlay" Source="./../Images/FK/Classes/monk_female.png" Height="30" Margin="0,0,0,0" Cursor="Hand" />
+                    <ComboBox SelectedIndex="0" Margin="0,0,0,0" Width="100">
+                        <ComboBox.Items>
+                            <ComboBoxItem>Test #1</ComboBoxItem>
+                            <ComboBoxItem>Test #2</ComboBoxItem>
+                            <ComboBoxItem>Test #3</ComboBoxItem>
+                        </ComboBox.Items>
+                    </ComboBox>
+
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Width="35" Height="32" BorderBrush="#e9e9e9" Background="#ffffff" BorderThickness="1,1,0,1" CornerRadius="4,0,0,4">
+                        <Image Source="./../Images/FK/Icons/pauseacc.png" Width="16" Height="16" />
+                    </Border>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Width="35" Height="32" BorderBrush="#e9e9e9" Background="#f0f0f0" BorderThickness="0,1,1,1" CornerRadius="0,4,4,0">
+                        <Image Source="./../Images/FK/Icons/stopacc.png" Width="16" Height="16" />
+                    </Border>
+                </StackPanel>
+
+             
+            </StackPanel>
+            <StackPanel x:Name="TopMenuBorder" Width="635" Height="1" Background="#ededed"></StackPanel>
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>

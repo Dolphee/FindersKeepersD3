@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Mainbar.ExperienceHelper"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FindersKeepers.Templates.Mainbar"
+      xmlns:i="clr-namespace:FindersKeepers"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300" Width="735" Height="29" Canvas.Top="66" Canvas.Left="433">
+
+    <UserControl.Resources>
+        <i:MediaBrushConverter x:Key="MediaBrushConverter" />
+        <i:FontConverter x:Key="FontConverter" />
+        <i:LeftMarginConverter x:Key="LeftMarginConverter"/>
+        <i:GradientConverter x:Key="GradientConverter" />
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal" x:Name="FC" >
+        <ItemsControl ItemsSource="{Binding Elements}"  x:Name="FControls" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Margin="37,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="590" Height="29" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="{x:Type ContentPresenter}" />
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Tag="{Binding FName}" Width="{Binding Style.Background.Width}" Margin="{Binding Style.Background.Position, Converter={StaticResource LeftMarginConverter}}" BorderThickness="{Binding Style.Background.BorderSize}" BorderBrush="{Binding Style.Background.BorderColor, Converter= {StaticResource MediaBrushConverter}}" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border.Background>
+                            <LinearGradientBrush GradientStops="{Binding Style.Background.Background, Converter={StaticResource GradientConverter}}" Opacity="{Binding Style.Background.Opacity}"/>
+                        </Border.Background>
+                        
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding Value}" FontFamily="{Binding Style.Value.Font, Converter= {StaticResource FontConverter}}" Foreground="{Binding Style.Value.FontColor, Converter= {StaticResource MediaBrushConverter}}" FontSize="{Binding Style.Value.FontSize}" TextAlignment="Center"  Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding TextExtension}" FontFamily="{Binding Style.Value.Font, Converter= {StaticResource FontConverter}}" Foreground="#eaeaea" FontSize="{Binding Style.Value.FontSize}" TextAlignment="Center"  Opacity="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Canvas Width="35" HorizontalAlignment="Right" Margin="0,0,0,0" x:Name="AncientRate">
+            <Border BorderBrush="#000" BorderThickness="1" Height="27" Width="35">
+                <Border.Background>
+                    <SolidColorBrush Color="#511a2d" Opacity="0.6" />
+                </Border.Background>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="10%" FontFamily="Segoe UI" Foreground="#fff" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0"  />
+                </StackPanel>
+            </Border>
+        </Canvas>
+
+        <Canvas Width="35" HorizontalAlignment="Right" Margin="0,0,0,0" x:Name="AvgLegHour">
+            <Border BorderBrush="#000" BorderThickness="1" Height="27" Width="35">
+                <Border.Background>
+                    <SolidColorBrush Color="#441223" Opacity="0.6" />
+                </Border.Background>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"> 
+                    <TextBlock Text="11" FontFamily="Segoe UI" Foreground="#fff" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="0,0,0,0"  />
+                </StackPanel>
+            </Border>
+        </Canvas>
+
+        <Canvas Width="35" HorizontalAlignment="Right"  Margin="0,0,1,0" x:Name="LootTracker">
+            <Border BorderBrush="#000" BorderThickness="1" Height="27" Width="35">
+                <Border.Background>
+                    <SolidColorBrush Color="#2c0913" Opacity="0.6" />
+                </Border.Background>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="+0" FontFamily="Segoe UI" Foreground="#77ff8a" FontWeight="Bold" FontSize="13" VerticalAlignment="Center" Margin="0,0,0,0"  />
+                </StackPanel>
+            </Border>
+        </Canvas>
+    </StackPanel>
+</UserControl>

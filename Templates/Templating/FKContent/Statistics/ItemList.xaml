@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Statistics.ItemList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FindersKeepers.Templates.Statistics"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="634" Width="634" Height="441">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./../../Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="./../../Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <Border Background="#f9f9f9" Width="634" BorderBrush="#ededed" Height="50" BorderThickness="0,0,0,1">
+            <StackPanel x:Name="TopMenu" Width="634"  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Image Source="/Images/FK/BigShow.png" Width="31" Height="24" Cursor="Hand">
+                        <Image.ToolTip>
+                            <TextBlock Text="Display as icons" />
+                        </Image.ToolTip>
+                    </Image>
+                    <Image Source="/Images/FK/BigDetails.png" Width="32" Height="24" Cursor="Hand">
+                        <Image.ToolTip>
+                            <TextBlock Text="Display in list" />
+                        </Image.ToolTip>
+                    </Image>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <Image Source="/Images/FK/SearchHome.png" Width="40" Height="24" Cursor="Hand">
+                        <Image.ToolTip>
+                            <TextBlock Text="Go back to start" />
+                        </Image.ToolTip>
+                    </Image>
+                    <StackPanel Width="390" Height="24" Orientation="Horizontal">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="/Images/FK/Search.png" />
+                        </StackPanel.Background>
+                        <Grid Width="390">
+                            <TextBox x:Name="SearchLegendary" KeyUp="Search" VerticalAlignment="Center" HorizontalAlignment="Left" Height="15" Margin="0,5,0,0" VerticalScrollBarVisibility="Disabled" Width="320" Text="" Background="Transparent" Foreground="#646464" FontFamily="Gautami"  FontSize="12px" BorderThickness="0" />
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" x:Name="SearchHint" Opacity="0">
+                                <TextBlock x:Name="SearchCount" Text="9" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,5,3,0" Foreground="#2788cc" FontFamily="Gautami"  FontSize="12px" />
+                                <TextBlock Text="Matches" HorizontalAlignment="Right" Margin="0,5,10,0" Foreground="#646464" FontFamily="Gautami"  FontSize="12px" />
+                            </StackPanel>
+                         </Grid>
+                   </StackPanel>
+
+                    <StackPanel Margin="20,0,0,0">
+                        <Border Width="31" Height="24" Cursor="Hand" MouseDown="ToggleMenu">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Images/FK/btn.png" />
+                            </Border.Background>
+                            <Border.ToolTip>
+                                <TextBlock Text="Filter options" />
+                            </Border.ToolTip>
+                            <Image Source="/Images/FK/Icons/pin.png" Width="12" Height="12" />
+                        </Border>
+                    </StackPanel>
+                    
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Canvas>
+            <StackPanel Orientation="Horizontal">
+                <ScrollViewer Width="638" Height="388" Background="White" x:Name="Scroller">
+                    <StackPanel Background="#fff" x:Name="Entries" />
+                </ScrollViewer>
+            </StackPanel>
+
+            <Canvas x:Name="BMenu" Width="1" Height="390" Background="#ededed" Canvas.Right="187" Visibility="Hidden"/>
+            <Canvas x:Name="Menu" Width="187" Height="390" Background="#f9f9f9" Canvas.Top="0" Canvas.Right="0" Visibility="Hidden">
+                <StackPanel Margin="00">
+
+                    <TextBlock Text="FILTER SETTINGS" FontSize="12" FontFamily="#DinPRO" Foreground="#737373"  Margin="20,25,5,15" />
+ 
+                
+                    <Border Width="160" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="10,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="160" Orientation="Horizontal">
+                                <StackPanel Width="140">
+                                    <TextBlock Text="Only Ancient" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="Display only ancient items" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image x:Name="AllowUpdates" Source="./../../Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+
+                    <Border Width="160" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="10,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="160" Orientation="Horizontal">
+                                <StackPanel Width="140">
+                                    <TextBlock Text="Only Set Items" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="Display only set items" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image x:Name="AllowUpdats" Source="./../../Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="160" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="10,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="160" Orientation="Horizontal">
+                                <StackPanel Width="140">
+                                    <TextBlock Text="Filter By Account" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="This will by account" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image x:Name="AllowUpda" Source="./../../Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+
+                    <Border Width="160" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="10,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="160" Orientation="Horizontal">
+                                <StackPanel Width="160">
+                                    <TextBlock Text="Account" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" Margin="0,0,0,3" />
+                                    <ComboBox Width="160" SelectedIndex="0" FontFamily="DinPro" FontSize="11" Height="25" Foreground="#737373" Text="Hej" >
+                                        <ComboBoxItem>Dolphelius</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="160" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="10,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="160" Orientation="Horizontal">
+                                <StackPanel Width="140">
+                                    <TextBlock Text="Filter By Account" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="This will by account" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image x:Name="AllowssUpda" Source="./../../Images/FK/checked.png" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Border Width="160" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="10,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="160" Orientation="Horizontal">
+                                <StackPanel Width="160">
+                                    <TextBlock Text="Filter by GameType" Foreground="#464646" FontFamily="DinPro"  FontWeight="Normal" FontSize="12px" Margin="0,0,0,3" />
+                                    <ComboBox Width="160" SelectedIndex="0" FontFamily="DinPro" FontSize="11" Height="25" Foreground="#737373" Text="Hej" >
+                                        <ComboBoxItem>Kadala</ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+                
+                
+            </Canvas>
+        </Canvas>
+    </StackPanel>
+</UserControl>

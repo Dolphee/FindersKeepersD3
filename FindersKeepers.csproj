@@ -1,0 +1,1037 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{076790F8-F9B8-4900-9D42-B2C3D01F499D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FindersKeepers</RootNamespace>
+    <AssemblyName>FindersKeepers</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FindersKeepers.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Enigma.D3.Signatures">
+      <HintPath>obj\Debug\Enigma.D3.Signatures.dll</HintPath>
+    </Reference>
+    <Reference Include="Enigma.Memory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>obj\Debug\Enigma.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="FK.Helpers">
+      <HintPath>obj\Debug\FK.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="FK.UI">
+      <HintPath>FK.UI\obj\Debug\FK.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged, Version=1.51.3.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>packages\PropertyChanged.Fody.1.51.3\lib\dotnet\PropertyChanged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Assets\Converters\Converters.cs" />
+    <Compile Include="Assets\Factory\Singleton.cs" />
+    <Compile Include="Assets\MenuHelper.cs" />
+    <Compile Include="Assets\RelayCommand.cs" />
+    <Compile Include="BaseDesign.xaml.cs">
+      <DependentUpon>BaseDesign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config\DebugHelper.cs" />
+    <Compile Include="Config\FKAccounts.cs" />
+    <Compile Include="Config\FKAffixes.cs" />
+    <Compile Include="Config\FKFilters.cs" />
+    <Compile Include="Config\FKMinimap.cs" />
+    <Compile Include="Config\FKSounds.cs" />
+    <Compile Include="Config\FKStats.cs" />
+    <Compile Include="Config\FKStyles.cs" />
+    <Compile Include="Config\FKTracker.cs" />
+    <Compile Include="Config\Heroes.cs" />
+    <Compile Include="Config\Pickit\Attributes.cs" />
+    <Compile Include="Config\WebHelper.cs" />
+    <Compile Include="Controller\AccountWatcherThread.cs" />
+    <Compile Include="Controller\ActorHelper.cs" />
+    <Compile Include="Controller\Actor\LegendaryItems.cs" />
+    <Compile Include="Controller\Actor\SNOActor.cs" />
+    <Compile Include="Controller\Collections\INotifyList.cs" />
+    <Compile Include="Controller\DispatcherHelper.cs" />
+    <Compile Include="Controller\Enums\HeroLevel.cs" />
+    <Compile Include="Controller\Enums\ItemQuality.cs" />
+    <Compile Include="Controller\Enums\MinimapState.cs" />
+    <Compile Include="Controller\Enums\Rifts.cs" />
+    <Compile Include="Controller\Enums\SkillPosition.cs" />
+    <Compile Include="Controller\Extensions.cs" />
+    <Compile Include="Controller\GameManagerData\GameManagerData.cs" />
+    <Compile Include="Controller\GManagers.cs" />
+    <Compile Include="Controller\NotifyingObject.cs" />
+    <Compile Include="Helpers\Converters\Converters.cs" />
+    <Compile Include="Helpers\DamageNumbers.cs" />
+    <Compile Include="Helpers\FKTracker.cs" />
+    <Compile Include="Helpers\HitTesting.cs" />
+    <Compile Include="Helpers\LevelAreaHelper.cs" />
+    <Compile Include="Controller\UIWatcherThread.cs" />
+    <Compile Include="Controller\WatcherThread.cs" />
+    <Compile Include="Controller\WatchThread.cs" />
+    <Compile Include="Debug\Dump.cs" />
+    <Compile Include="Debug\GetValues.cs" />
+    <Compile Include="Helpers\Actors.cs" />
+    <Compile Include="Helpers\Affix.cs" />
+    <Compile Include="Helpers\D3Overlay.cs" />
+    <Compile Include="Helpers\DiabloIII.cs" />
+    <Compile Include="Helpers\ExperienceHelper.cs" />
+    <Compile Include="Helpers\Item.cs" />
+    <Compile Include="Helpers\MapItems.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\ActorTypes.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMap.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapActor.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapBase.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapQuest.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapScenesLargeMap.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapScenes.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapShape.cs" />
+    <Compile Include="Helpers\Overlay\ActorTypes\IMapTrickle.cs" />
+    <Compile Include="Helpers\Overlay\Buffs\IBuff.cs" />
+    <Compile Include="Helpers\Overlay\DrawHelper.cs" />
+    <Compile Include="Helpers\Overlay\OverlayCaller.cs" />
+    <Compile Include="Helpers\Quests.cs" />
+    <Compile Include="Helpers\SceneHelper.cs" />
+    <Compile Include="Helpers\SoundHelper.cs" />
+    <Compile Include="Helpers\Styles\BuffRender.cs" />
+    <Compile Include="Helpers\Styles\MapReveal.cs" />
+    <Compile Include="Helpers\Styles\MinimapContainer.cs" />
+    <Compile Include="Helpers\Styles\RadialChart.xaml.cs">
+      <DependentUpon>RadialChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\TownHelper.cs" />
+    <Compile Include="Helpers\UIObjects.cs" />
+    <Compile Include="Helpers\Vector3.cs" />
+    <Compile Include="Helpers\VirtualInput.cs" />
+    <Compile Include="Templates\DebugHelper\ItemViewer.xaml.cs">
+      <DependentUpon>ItemViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\BasicEvents.cs" />
+    <Compile Include="Templates\Templating\BasicValueTemplate.cs" />
+    <Compile Include="Templates\Templating\FKContent\Application\ApplicationController.cs" />
+    <Compile Include="Templates\Templating\FKContent\Application\ApplicationMenu.cs" />
+    <Compile Include="Templates\Templating\FKContent\Run\AccountManager.xaml.cs">
+      <DependentUpon>AccountManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\ActorHelperDebug.xaml.cs">
+      <DependentUpon>ActorHelperDebug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\ActorHelper\ActorHelper.xaml.cs">
+      <DependentUpon>ActorHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\ActorHelper\ActorHelperObserver.cs" />
+    <Compile Include="Templates\Templating\FKContent\Application\Application.cs" />
+    <Compile Include="Templates\Templating\FKContent\Application\ElitePacks\SetAffixes.xaml.cs">
+      <DependentUpon>SetAffixes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\NPC\MinimapItem.xaml.cs">
+      <DependentUpon>MinimapItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\NPC\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\Overlay\MiscBar.xaml.cs">
+      <DependentUpon>MiscBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\Overlay\ExperienceBar.xaml.cs">
+      <DependentUpon>ExperienceBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\Overlay\Skillbar.xaml.cs">
+      <DependentUpon>Skillbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\Overlay\OverlaySettings.xaml.cs">
+      <DependentUpon>OverlaySettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\CMinimap.xaml.cs">
+      <DependentUpon>CMinimap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Debug.xaml.cs">
+      <DependentUpon>Debug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Elites\EliteAffixes.xaml.cs">
+      <DependentUpon>EliteAffixes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Application\ElitePacks\GeneralSettings.xaml.cs">
+      <DependentUpon>GeneralSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\ErrorMessages\Warden.xaml.cs">
+      <DependentUpon>Warden.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\ErrorMessages\MemoryLeak.xaml.cs">
+      <DependentUpon>MemoryLeak.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\ErrorMessages\ErrorMessage.xaml.cs">
+      <DependentUpon>ErrorMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\ErrorMessages\NotAdmin.xaml.cs">
+      <DependentUpon>NotAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\ErrorMessages\NotSupportedVersion.xaml.cs">
+      <DependentUpon>NotSupportedVersion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Filters\Filters.cs" />
+    <Compile Include="Templates\Templating\FKContent\Filters\Overlay.xaml.cs">
+      <DependentUpon>Overlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Filters\ItemFilter.xaml.cs">
+      <DependentUpon>ItemFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Filters\MultiboxFilter.xaml.cs">
+      <DependentUpon>MultiboxFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Filters\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Run\GameInit.xaml.cs">
+      <DependentUpon>GameInit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\hit.xaml.cs">
+      <DependentUpon>hit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Information.xaml.cs">
+      <DependentUpon>Information.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Inventory\Inventory.xaml.cs">
+      <DependentUpon>Inventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Inventory\Stash.xaml.cs">
+      <DependentUpon>Stash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\IPerform.cs" />
+    <Compile Include="Helpers\OutlinedTextBlock.cs" />
+    <Compile Include="Templates\DiabloIII\ItemOverlaySimple.xaml.cs">
+      <DependentUpon>ItemOverlaySimple.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\LargeMap.xaml.cs">
+      <DependentUpon>LargeMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\MainBar.xaml.cs">
+      <DependentUpon>MainBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\MainBarHelper\Buffs.cs" />
+    <Compile Include="Templates\DiabloIII\Mainbar\BuffController.cs" />
+    <Compile Include="Templates\DiabloIII\Mainbar\BuffsControl.xaml.cs">
+      <DependentUpon>BuffsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\ExperienceHelper.xaml.cs">
+      <DependentUpon>ExperienceHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\ExperienceHelperObserver.cs" />
+    <Compile Include="Templates\DiabloIII\Mainbar\Health.xaml.cs">
+      <DependentUpon>Health.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\MainBarControl.xaml.cs">
+      <DependentUpon>MainBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\MainBarHandler.cs" />
+    <Compile Include="Templates\DiabloIII\Mainbar\Resource.xaml.cs">
+      <DependentUpon>Resource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\Skillbar.xaml.cs">
+      <DependentUpon>Skillbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\ExperienceItems.xaml.cs">
+      <DependentUpon>ExperienceItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Mainbar\SkillbarNotify.cs" />
+    <Compile Include="Templates\DiabloIII\MinimapNotifyObjects\LargeMapNotify.cs" />
+    <Compile Include="Templates\DiabloIII\MinimapNotifyObjects\MinimapNotify.cs" />
+    <Compile Include="Templates\DiabloIII\Overlay\Attacher.cs" />
+    <Compile Include="Templates\DiabloIII\Overlay\D3OverlayControl.xaml.cs">
+      <DependentUpon>D3OverlayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Overlay\ItemControl.cs" />
+    <Compile Include="Templates\DiabloIII\Overlay\ItemOverlay.xaml.cs">
+      <DependentUpon>ItemOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Overlay\ItemOverlayNotifyer.cs" />
+    <Compile Include="Templates\DiabloIII\Overlay\OverlayHelper.cs" />
+    <Compile Include="Templates\DiabloIII\Overlay\ToolTipHelper.cs" />
+    <Compile Include="Templates\Overview.xaml.cs">
+      <DependentUpon>Overview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Rifts\GemUpgrade.xaml.cs">
+      <DependentUpon>GemUpgrade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Rifts\Rift.xaml.cs">
+      <DependentUpon>Rift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\Rifts\GreaterRift.xaml.cs">
+      <DependentUpon>GreaterRift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Run\RunController.cs" />
+    <Compile Include="Templates\Templating\FKContent\Statistics\ItemList.xaml.cs">
+      <DependentUpon>ItemList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Run\Stop.xaml.cs">
+      <DependentUpon>Stop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Run\Running.xaml.cs">
+      <DependentUpon>Running.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\SkillScreen\Screen.xaml.cs">
+      <DependentUpon>Screen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Run\Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Statistics\ItemTracker.xaml.cs">
+      <DependentUpon>ItemTracker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Support\Accounts.xaml.cs">
+      <DependentUpon>Accounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Support\GeneralSettings.xaml.cs">
+      <DependentUpon>GeneralSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Support\MultiMacro.xaml.cs">
+      <DependentUpon>MultiMacro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Support\Support.cs" />
+    <Compile Include="Templates\Templating\FKContent\Run\NeedAdmin.xaml.cs">
+      <DependentUpon>NeedAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DiabloIII\temp.xaml.cs">
+      <DependentUpon>temp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Support\SupportController.cs" />
+    <Compile Include="Templates\Templating\FKTemplates\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKTemplates\IDesign.cs" />
+    <Compile Include="Templates\Templating\FKTemplates\LayoutHelper.xaml.cs">
+      <DependentUpon>LayoutHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKTemplates\MainContentFill.xaml.cs">
+      <DependentUpon>MainContentFill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKTemplates\MainContent.xaml.cs">
+      <DependentUpon>MainContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKTemplates\MainContentMenu.xaml.cs">
+      <DependentUpon>MainContentMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKTemplates\SideControl.xaml.cs">
+      <DependentUpon>SideControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Templating\FKContent\Filters\FilterController.cs" />
+    <Page Include="FindersKeepers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Config\FKConfig.cs" />
+    <Compile Include="Config\XML.cs" />
+    <Compile Include="Controller\GameManager.cs" />
+    <Compile Include="Controller\FKMenuHelper.cs" />
+    <Compile Include="Controller\FKMethods.cs" />
+    <Compile Include="Controller\Skills.cs" />
+    <Compile Include="Controller\SnoPower.cs" />
+    <Compile Include="FindersKeepers.xaml.cs">
+      <DependentUpon>FindersKeepers.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="BaseDesign.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Styles\Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Styles\DropDownSmall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Styles\RadialChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Styles\Scrollbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DebugHelper\ItemViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Run\AccountManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\ActorHelperDebug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\ActorHelper\ActorHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\ElitePacks\SetAffixes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\NPC\MinimapItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\NPC\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\Overlay\MiscBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\Overlay\ExperienceBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\Overlay\Skillbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\Overlay\OverlaySettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\CMinimap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Debug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Elites\EliteAffixes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Application\ElitePacks\GeneralSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\ErrorMessages\Warden.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\ErrorMessages\MemoryLeak.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\ErrorMessages\ErrorMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\ErrorMessages\NotAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\ErrorMessages\NotSupportedVersion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Filters\Overlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Filters\ItemFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Filters\MultiboxFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Filters\General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Run\GameInit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\hit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Information.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Inventory\Inventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Inventory\Stash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\ItemOverlaySimple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\LargeMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\MainBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\BuffsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\ExperienceHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\Health.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\MainBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\Skillbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\DiabloIII\Mainbar\ExperienceItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Overlay\D3OverlayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Overlay\ItemOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Overview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\Rifts\GemUpgrade.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\DiabloIII\Rifts\Rift.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\DiabloIII\Rifts\GreaterRift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Statistics\ItemList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Run\Stop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Run\Running.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\SkillScreen\Screen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Run\Start.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Statistics\ItemTracker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Support\Accounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Support\GeneralSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Run\NeedAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKContent\Support\MultiMacro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\DiabloIII\temp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKTemplates\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKTemplates\LayoutHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKTemplates\MainContentFill.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Templates\Templating\FKTemplates\MainContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKTemplates\MainContentMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Templating\FKTemplates\SideControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\PInvokers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Images\HelveticaRoundedLT-Black.otf" />
+    <None Include="ClassDiagram1.cd" />
+    <Resource Include="Images\DINPro.otf" />
+    <None Include="ClassDiagram2.cd" />
+    <Resource Include="Images\Roboto.ttf" />
+    <Resource Include="Images\HelveticaNeueLTCom-Th.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\Enums\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\ajax-loaded.png" />
+    <Resource Include="Images\FK\ajax-loader.gif" />
+    <Resource Include="Images\FK\app.png" />
+    <Resource Include="Images\FK\app_hover.png" />
+    <Resource Include="Images\FK\checked.png" />
+    <Resource Include="Images\FK\FHome.png" />
+    <Resource Include="Images\FK\FHome_hover.png" />
+    <Resource Include="Images\FK\FilterActive.png" />
+    <Resource Include="Images\FK\Filters.png" />
+    <Resource Include="Images\FK\FiltersIcon.png" />
+    <Resource Include="Images\FK\Filters_hover.png" />
+    <Resource Include="Images\FK\FK.png" />
+    <Resource Include="Images\FK\FKL.png" />
+    <Resource Include="Images\FK\FKLogo.png" />
+    <Resource Include="Images\FK\FKLogoBig.png" />
+    <Resource Include="Images\FK\Home.png" />
+    <Resource Include="Images\FK\Logo.png" />
+    <Resource Include="Images\FK\Macro.png" />
+    <Resource Include="Images\FK\Macro_hover.png" />
+    <Resource Include="Images\FK\notChecked.png" />
+    <Resource Include="Images\FK\Play.png" />
+    <Resource Include="Images\FK\Seperator.png" />
+    <Resource Include="Images\FK\Stats.png" />
+    <Resource Include="Images\FK\Stats_hover.png" />
+    <Resource Include="Images\FK\SubMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\ItemOverlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="a.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\logosmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\IconBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\FilterIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\Filters.png" />
+    <Resource Include="Images\FK\Icons\Multibox.png" />
+    <Resource Include="Images\FK\Icons\Pickit.png" />
+    <Resource Include="Images\FK\Icons\SettingActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\FiltersActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\MultiboxActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\PickitActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\bar_not.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\browse.png" />
+    <Resource Include="Images\FK\Icons\browseActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\audio.png" />
+    <Resource Include="Images\FK\Icons\audioMuted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\arrowLeft.png" />
+    <Resource Include="Images\FK\Icons\arrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\closing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\minimap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\play_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\Battlenet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\ancient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\Account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\Experience.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\ItemTracker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\browseActiveE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\ExperienceActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\ItemTrackerActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\InventoryBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FK\FKIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\mapR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\droplets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\flags.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\intersect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\pins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\BigDetails.png" />
+    <Resource Include="Images\FK\BigDetails_Over.png" />
+    <Resource Include="Images\FK\BigShow.png" />
+    <Resource Include="Images\FK\BigShow_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\clock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\SearchHome.png" />
+    <Resource Include="Images\FK\SearchHome_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\btn.png" />
+    <Resource Include="Images\FK\btn_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Crafting_Materials\crafting_assortedparts_01.png" />
+    <Resource Include="Images\Crafting_Materials\crafting_legendary_01.png" />
+    <Resource Include="Images\Crafting_Materials\crafting_looted_reagent_01.png" />
+    <Resource Include="Images\Crafting_Materials\crafting_magic_01.png" />
+    <Resource Include="Images\Crafting_Materials\crafting_rare_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\clock.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\doors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Crafting_Materials\background.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Crafting_Materials\craftingreagent_legendary_set_borns.png" />
+    <Resource Include="Images\Crafting_Materials\craftingreagent_legendary_set_cains.png" />
+    <Resource Include="Images\Crafting_Materials\craftingreagent_legendary_set_captaincrimsons.png" />
+    <Resource Include="Images\Crafting_Materials\craftingreagent_legendary_set_demon.png" />
+    <Resource Include="Images\Crafting_Materials\craftingreagent_legendary_set_hallowed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Crafting_Materials\lootkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\operated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\forums.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Classes\monk_female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\arena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\season.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\app_not.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\errormsg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Classes\barbarian_female.png" />
+    <Resource Include="Images\FK\Classes\barbarian_male.png" />
+    <Resource Include="Images\FK\Classes\demonhunter_female.png" />
+    <Resource Include="Images\FK\Classes\demonhunter_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Classes\monk_male.png" />
+    <Resource Include="Images\FK\Classes\witchdoctor_female.png" />
+    <Resource Include="Images\FK\Classes\witchdoctor_male.png" />
+    <Resource Include="Images\FK\Classes\wizard_female.png" />
+    <Resource Include="Images\FK\Classes\wizard_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\pauseacc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\stopacc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\gamemanager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\unique_chest_019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FK\Icons\arrowallLeft.png" />
+    <Resource Include="Images\FK\Icons\arrowallRight.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Fody.1.29.2\build\dotnet\Fody.targets" Condition="Exists('packages\Fody.1.29.2\build\dotnet\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Fody.1.29.2\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.1.29.2\build\dotnet\Fody.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

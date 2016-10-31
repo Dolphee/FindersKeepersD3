@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="FindersKeepers.Templates.Mainbar.Resource"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:se="clr-namespace:FindersKeepers.Helpers"
+      xmlns:local="clr-namespace:FindersKeepers.Templates.Mainbar"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300" Width="169" Height="169" Canvas.Left="1184" Canvas.Top="14">
+    
+    <Grid>
+        <StackPanel x:Name="Container" HorizontalAlignment="Center" VerticalAlignment="Center" Width="169" Visibility="Hidden">
+            <StackPanel Orientation="Horizontal" Opacity="0.9" HorizontalAlignment="Center">
+                <se:OutlinedTextBlock x:Name="ResourceCurrent" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="30" 
+                            TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,0"
+                            Text="0" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Opacity="0.7" HorizontalAlignment="Center">
+                <se:OutlinedTextBlock x:Name="ResourceRegen" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="20" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="0" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+
+                <se:OutlinedTextBlock x:Name="secc" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="20" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="/s" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="DHContainer" HorizontalAlignment="Center" VerticalAlignment="Center" Width="169" Orientation="Horizontal" Visibility="Hidden">
+            <StackPanel Width="84">
+                <se:OutlinedTextBlock x:Name="HatredCurrent" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="30" 
+                            HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,0"
+                            Text="10" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+
+                <StackPanel Orientation="Horizontal" Opacity="0.7" HorizontalAlignment="Center">
+                <se:OutlinedTextBlock x:Name="ResouceRegen" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="20" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="0" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+
+                <se:OutlinedTextBlock x:Name="scc" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="20" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="/s" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="84">
+                <se:OutlinedTextBlock x:Name="DiscCurrent" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="30" 
+                            HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,0"
+                            Text="10" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+
+                <StackPanel Orientation="Horizontal" Opacity="0.7" HorizontalAlignment="Center">
+                    <se:OutlinedTextBlock x:Name="DiscRegens" FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="20" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="0" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+
+                    <se:OutlinedTextBlock FontFamily="/Images/HelveticaRoundedLT-Black.otf#Helvetica Rounded LT Black" FontWeight="Bold" FontSize="20" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,5"
+                            Text="/s" Tag="1" StrokeThickness="2" Fill="White" Stroke="Black" />
+                </StackPanel>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

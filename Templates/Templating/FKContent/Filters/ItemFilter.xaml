@@ -1,0 +1,94 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Filters.ItemFilter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="340" Width="400" Height="340">
+
+    <r:BasicValueTemplate.Resources>
+        <c:intToString x:Key="IntToString" />
+        <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" x:Key="h" />
+    </r:BasicValueTemplate.Resources>
+
+    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical" >
+
+        <StackPanel Width="400" Height="30" Margin="0,10,0,5" Orientation="Horizontal">
+            <StackPanel Width="230" >
+                <TextBlock Text="Active item filters" Height="15" FontFamily="Segoe UI" FontSize="13px" FontWeight="Bold" Foreground="#373737" Margin="0" />
+                <TextBlock Text="Filters in this box is activated" Height="20" FontFamily="Segoe UI" FontSize="10px" Foreground="#969696"/>
+            </StackPanel>
+            <StackPanel Width="150">
+                <TextBlock Text="Inactive item filters" Height="15" FontFamily="Segoe UI" FontSize="13px" FontWeight="Bold" Foreground="#373737" Margin="0" />
+                <TextBlock Text="Filters in this box is disabled" Height="20" FontFamily="Segoe UI" FontSize="10px" Foreground="#969696"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Width="400" Height="1" Margin="0,0,0,0" Background="#d9d9d9" Orientation="Vertical"/>
+        <StackPanel Width="400" Height="1" Margin="0,0,0,0" Background="White" Orientation="Vertical"/>
+
+        <StackPanel Width="400" Height="280" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Grid Width="177" Height="270">
+                <Border HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#ececec" BorderThickness="1" Width="177" Height="270" Background="White">
+                    <ListBox ItemsSource="{Binding Active}"
+                         MouseDoubleClick="MoveToDisabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="ActiveBox" FontFamily="Segoe UI" FontSize="10" Foreground="#595858" BorderBrush="Transparent" BorderThickness="0" Margin="10,0,0,0" Width="165" Height="250">
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={ StaticResource IntToString}}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </Grid>
+
+            <Grid Width="35" Height="270" Margin="5,0,0,0" >
+                <StackPanel Orientation="Vertical">
+                    <Border MouseDown="MoveSingleDisable" Background="White" Width="32" Height="32" BorderBrush="#e9e9e9" BorderThickness="1" CornerRadius="4" Margin="1,0,2,0" Cursor="Hand" MouseEnter="IconHover" MouseLeave="IconLeave">
+                        <Border.ToolTip>
+                            <Label Content="Move single selected item" />
+                        </Border.ToolTip>
+                        <Image Source="/Images/FK/Icons/arrowRight.png" Width="8" Height="6" />
+                    </Border>
+
+                    <Border MouseDown="MoveSingleEnable" Background="White" Width="32" Height="32" BorderBrush="#e9e9e9" BorderThickness="1" CornerRadius="4" Margin="1,2,2,0" Cursor="Hand" MouseEnter="IconHover" MouseLeave="IconLeave">
+                    <Border.ToolTip>
+                        <Label Content="Move single selected item" />
+                    </Border.ToolTip>
+                    <Image Source="/Images/FK/Icons/arrowLeft.png" Width="8" Height="6" />
+                </Border>
+                   
+                    <Border MouseDown="MoveAllDisabled" Background="White" Width="32" Height="32" BorderBrush="#e9e9e9" BorderThickness="1" CornerRadius="4" Margin="1,138,2,0" Cursor="Hand" MouseEnter="IconHover" MouseLeave="IconLeave">
+                        <Border.ToolTip>
+                            <Label Content="Move all items" />
+                        </Border.ToolTip>
+                        <Image Source="/Images/FK/Icons/arrowallRight.png" Width="8" Height="7" />
+                    </Border>
+                    <Border MouseDown="MoveAllEnabled" Background="White" Width="32" Height="32" BorderBrush="#e9e9e9" BorderThickness="1" CornerRadius="4" Margin="1,2,2,0" Cursor="Hand" MouseEnter="IconHover" MouseLeave="IconLeave">
+                        <Border.ToolTip>
+                            <Label Content="Move all items" />
+                        </Border.ToolTip>
+                        <Image Source="/Images/FK/Icons/arrowallLeft.png" Width="8" Height="7" />
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+            <Grid Width="177" Height="270" Margin="5,0,0,0">
+                <Border HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#ececec" BorderThickness="1" Width="177" Height="270" Background="White">
+                    <ListBox ItemsSource="{Binding NonActive, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="MoveToEnable" x:Name="notactiveBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  FontFamily="Segoe UI" FontSize="10" Foreground="#595858" BorderBrush="Transparent" BorderThickness="0" Width="165" Height="250"  Margin="10,0,0,0">
+                         <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={ StaticResource IntToString}}"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </Grid>
+        </StackPanel>
+        
+    </StackPanel>
+
+   
+</r:BasicValueTemplate>

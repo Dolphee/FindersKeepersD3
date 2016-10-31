@@ -1,0 +1,76 @@
+﻿<r:BasicValueTemplate x:Class="FindersKeepers.Templates.Application.Overlay.ExperienceBar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:r="clr-namespace:FindersKeepers.Templates.Templating"
+      xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400" Width="400" Height="340">
+    <r:BasicValueTemplate.Resources>
+        <ResourceDictionary>
+            <c:CImageChecked x:Key="ImageCheck"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Helpers/Styles/Scrollbar.xaml" />
+                <ResourceDictionary Source="/Helpers/Styles/DropDownSmall.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </r:BasicValueTemplate.Resources>
+
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <StackPanel Width="400" Orientation="Vertical" Margin="0,5,10,0">
+            <ScrollViewer Height="330" Margin="0,0,0 ,0">
+                <StackPanel x:Name="Data" >
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="350">
+                                    <TextBlock Text="Enable Experiencebar" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="This will the experiencebar in the overlay" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image Source="{Binding DataObject.DataHandler.Enabled, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Width="370" Orientation="Horizontal">
+                                <StackPanel Width="350">
+                                    <TextBlock Text="Enable current experience in the experiencebar" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                    <TextBlock Text="This will enable the current experience" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                                </StackPanel>
+                                <StackPanel Width="20" Height="25">
+                                    <Image Source="{Binding DataObject.DataHandler.ShowNumbers, Converter= { StaticResource ImageCheck}}" Width="13" Height="13" Margin="0,5,0,0" Cursor="Hand" MouseDown="ChangeValue" RenderTransformOrigin="0.5,0.615"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Width="370" BorderBrush="#d7d7d7" BorderThickness="0,0,0,1" Margin="0,10,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Width="370" Orientation="Horizontal">
+                            <StackPanel Width="320">
+                                    <TextBlock Text="Experience Items" Foreground="#464646" FontFamily="/Images/DINPro.otf#DINPro Regular"  FontWeight="Normal" FontSize="12px" />
+                                <TextBlock Text="Set or remove experience items to be shown in the overlay" Foreground="#6f6f6f" FontFamily="Segoe UI" Margin="0,2,0,10"  FontWeight="Normal" FontSize="10px" />
+                            </StackPanel>
+                            <StackPanel Width="50" Height="25">
+                                    <Border Height="25" Width="50" CornerRadius="3" BorderBrush="#cccccc" BorderThickness="1" Background="White" Cursor="Hand">
+                                        <Border.ToolTip>
+                                            <TextBlock Text="Manage the Experience items in the overlay" />
+                                        </Border.ToolTip>
+                                        <Border.Child>
+                                            <TextBlock Text="Manage" Height="15" TextAlignment="Center" Foreground="#646464" FontFamily="Gautami"  FontSize="11px"  />
+                                        </Border.Child>
+                                    </Border>
+                                </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </StackPanel>
+</r:BasicValueTemplate>

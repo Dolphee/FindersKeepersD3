@@ -1,0 +1,100 @@
+﻿<Window x:Class="FindersKeepers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:FindersKeepers.Assets.Converters"
+        UseLayoutRounding="True" Title="{Binding Version}"  
+        SnapsToDevicePixels="True" 
+        BorderThickness="1" 
+        Height="492" 
+        Width="711" 
+        ResizeMode="NoResize"  
+        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen">
+    <Window.BorderBrush>
+        <ImageBrush ImageSource="/Images/FK/border.png" />
+    </Window.BorderBrush>
+
+    <Window.Resources>
+        <c:CColorConverter x:Key="ColorConverter"  />
+        <c:CVisibility x:Key="Visibility"/>
+        <c:CActive x:Key="Active"/>
+
+        <Style TargetType="ToolTip" x:Key="StartToolTip">
+            <Setter Property="Placement" Value="Right"/>
+            <Setter Property="HorizontalOffset" Value="0" />
+            <Setter Property="VerticalOffset" Value="0" />
+            <Setter Property="HasDropShadow" Value="false" />
+            <Setter Property="Background" Value="#ff7272" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Height" Value="47"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="631"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Height="490" Orientation="Vertical"  Background="#2b4c65" VerticalAlignment="Top" x:Name="LeftMenu">
+            <StackPanel Background="Transparent" Cursor="Hand" VerticalAlignment="Top" MouseDown="Move" HorizontalAlignment="Center" Width="75" Height="50">
+                <StackPanel.ToolTip>
+                    <StackPanel>
+                        <TextBlock Text="Finderskeepers" Height="20" FontSize="14"/>
+                        <TextBlock Text="http://www.finderskeepersd3.com" Height="15" Foreground="#666666"/>
+                    </StackPanel>
+                </StackPanel.ToolTip>
+                <StackPanel Height="49">
+                    <Image Source="./Images/FK/IconBig.png" Width="20" Height="20" Margin="28,15,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <Border BorderThickness="0,1,0,0" BorderBrush="#1e3c53" Width="75" Height="1" />
+            </StackPanel>
+
+             <ItemsControl ItemsSource="{Binding Path=Menu}" x:Name="MenuHolder">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Tag="{Binding}" Background="{Binding Effects.Color, Converter={StaticResource ColorConverter}}" MouseEnter="AnimateFadeIn" MouseLeave="AnimateFadeOut" MouseDown="ProcessPage" BorderThickness="0,0,0,1" BorderBrush="#1e3c53" Cursor="Hand" Width="75" Height="47" Visibility="{Binding IsVisible,Converter={StaticResource Visibility}}">
+                            <Border.ToolTip>
+                                <ToolTip Placement="Right" BorderThickness="0" Height="47">
+                                    <ToolTip.Background>
+                                        <SolidColorBrush Color="Black" Opacity="0.8"/>
+                                    </ToolTip.Background>
+                                  
+                                    <TextBlock Text="{Binding MName}" Padding="15,0,15,0" Foreground="White" />
+                                </ToolTip>
+                            </Border.ToolTip>
+
+                            <Border BorderBrush="{Binding BorderColor, Converter={StaticResource ColorConverter}}" BorderThickness="0,1,0,0">
+                                <Image Source="{Binding Icon.IconName}" Width="15" Height="15" Margin="30,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Border>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <StackPanel Background="Transparent" Cursor="Hand" Height="235" MouseDown="Move"/>
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Height="430" Orientation="Vertical" VerticalAlignment="Top" Margin="0,50,0,0">
+            <ItemsControl ItemsSource="{Binding Menu}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="-8,1,0,1" Visibility="{Binding IsVisible,Converter={StaticResource Visibility}}" Background="{Binding Effects.Hover, Converter={StaticResource ColorConverter}}"  Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Width="4" Height="45" Opacity="0.9"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <StackPanel Margin="-6,0,0,0" Grid.Column="2" x:Name="MainPage" />
+
+    </Grid>
+</Window>

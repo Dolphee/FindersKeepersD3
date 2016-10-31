@@ -1,0 +1,2088 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{566FF909-E18D-4004-B03E-FEE4B9D027FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FK.UI</RootNamespace>
+    <AssemblyName>FK.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UniqueItems.cs" />
+    <Compile Include="UniqueItemsController.cs" />
+    <Compile Include="UniqueItemsHelper.cs" />
+    <Compile Include="UpdateInformation.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_2H\unique_flail_2h_101.png" />
+    <Resource Include="Items\Helm\unique_helm_set_01.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_001.png" />
+    <Resource Include="Items\PlanLegendary_Smith\SmithPlan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Amulet\amulet01.png" />
+    <Resource Include="Items\Amulet\amulet02.png" />
+    <Resource Include="Items\Amulet\amulet03.png" />
+    <Resource Include="Items\Amulet\amulet04.png" />
+    <Resource Include="Items\Amulet\amulet05.png" />
+    <Resource Include="Items\Amulet\amulet06.png" />
+    <Resource Include="Items\Amulet\amulet07.png" />
+    <Resource Include="Items\Amulet\amulet08.png" />
+    <Resource Include="Items\Amulet\amulet09.png" />
+    <Resource Include="Items\Amulet\amulet10.png" />
+    <Resource Include="Items\Amulet\amulet11.png" />
+    <Resource Include="Items\Amulet\amulet12.png" />
+    <Resource Include="Items\Amulet\amulet13.png" />
+    <Resource Include="Items\Amulet\amulet14.png" />
+    <Resource Include="Items\Amulet\amulet15.png" />
+    <Resource Include="Items\Amulet\amulet16.png" />
+    <Resource Include="Items\Amulet\amulet17.png" />
+    <Resource Include="Items\Amulet\unique_amulet_001.png" />
+    <Resource Include="Items\Amulet\unique_amulet_002.png" />
+    <Resource Include="Items\Amulet\unique_amulet_003.png" />
+    <Resource Include="Items\Amulet\unique_amulet_004.png" />
+    <Resource Include="Items\Amulet\unique_amulet_005.png" />
+    <Resource Include="Items\Amulet\unique_amulet_006.png" />
+    <Resource Include="Items\Amulet\unique_amulet_007.png" />
+    <Resource Include="Items\Amulet\unique_amulet_008.png" />
+    <Resource Include="Items\Amulet\unique_amulet_009.png" />
+    <Resource Include="Items\Amulet\unique_amulet_010.png" />
+    <Resource Include="Items\Amulet\unique_amulet_012.png" />
+    <Resource Include="Items\Amulet\unique_amulet_013.png" />
+    <Resource Include="Items\Amulet\unique_amulet_014.png" />
+    <Resource Include="Items\Amulet\unique_amulet_015.png" />
+    <Resource Include="Items\Amulet\unique_amulet_016.png" />
+    <Resource Include="Items\Amulet\unique_amulet_101.png" />
+    <Resource Include="Items\Amulet\unique_amulet_102.png" />
+    <Resource Include="Items\Amulet\unique_amulet_103.png" />
+    <Resource Include="Items\Amulet\unique_amulet_104.png" />
+    <Resource Include="Items\Amulet\unique_amulet_105.png" />
+    <Resource Include="Items\Amulet\unique_amulet_106.png" />
+    <Resource Include="Items\Amulet\unique_amulet_107.png" />
+    <Resource Include="Items\Amulet\unique_amulet_108.png" />
+    <Resource Include="Items\Amulet\unique_amulet_109.png" />
+    <Resource Include="Items\Amulet\unique_amulet_set_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Axe_1H\axe_1h_000.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_001.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_002.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_003.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_004.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_005.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_006.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_007.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_101.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_102.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_103.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_104.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_105.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_106.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_107.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_201.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_202.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_203.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_204.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_205.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_206.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_207.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_301.png" />
+    <Resource Include="Items\Axe_1H\axe_1h_302.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_001.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_003.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_004.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_005.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_006.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_007.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_013.png" />
+    <Resource Include="Items\Axe_1H\unique_axe_1h_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Axe_2H\axe_2h_001.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_002.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_003.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_004.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_005.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_101.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_102.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_103.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_104.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_105.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_201.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_202.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_203.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_204.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_205.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_301.png" />
+    <Resource Include="Items\Axe_2H\axe_2h_302.png" />
+    <Resource Include="Items\Axe_2H\unique_axe_2h_001.png" />
+    <Resource Include="Items\Axe_2H\unique_axe_2h_003.png" />
+    <Resource Include="Items\Axe_2H\unique_axe_2h_009.png" />
+    <Resource Include="Items\Axe_2H\unique_axe_2h_010.png" />
+    <Resource Include="Items\Axe_2H\unique_axe_2h_011.png" />
+    <Resource Include="Items\Axe_2H\unique_axe_2h_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\belt_001.png" />
+    <Resource Include="Items\Belt\belt_002.png" />
+    <Resource Include="Items\Belt\belt_003.png" />
+    <Resource Include="Items\Belt\belt_004.png" />
+    <Resource Include="Items\Belt\belt_005.png" />
+    <Resource Include="Items\Belt\belt_006.png" />
+    <Resource Include="Items\Belt\belt_101.png" />
+    <Resource Include="Items\Belt\belt_102.png" />
+    <Resource Include="Items\Belt\belt_103.png" />
+    <Resource Include="Items\Belt\belt_104.png" />
+    <Resource Include="Items\Belt\belt_105.png" />
+    <Resource Include="Items\Belt\belt_201.png" />
+    <Resource Include="Items\Belt\belt_202.png" />
+    <Resource Include="Items\Belt\belt_203.png" />
+    <Resource Include="Items\Belt\belt_204.png" />
+    <Resource Include="Items\Belt\belt_205.png" />
+    <Resource Include="Items\Belt\belt_206.png" />
+    <Resource Include="Items\Belt\belt_207.png" />
+    <Resource Include="Items\Belt\belt_208.png" />
+    <Resource Include="Items\Belt\unique_belt_001.png" />
+    <Resource Include="Items\Belt\unique_belt_002.png" />
+    <Resource Include="Items\Belt\unique_belt_003.png" />
+    <Resource Include="Items\Belt\unique_belt_004.png" />
+    <Resource Include="Items\Belt\unique_belt_005.png" />
+    <Resource Include="Items\Belt\unique_belt_005_p3.png" />
+    <Resource Include="Items\Belt\unique_belt_006.png" />
+    <Resource Include="Items\Belt\unique_belt_007.png" />
+    <Resource Include="Items\Belt\unique_belt_008.png" />
+    <Resource Include="Items\Belt\unique_belt_009.png" />
+    <Resource Include="Items\Belt\unique_belt_01.png" />
+    <Resource Include="Items\Belt\unique_belt_010.png" />
+    <Resource Include="Items\Belt\unique_belt_012.png" />
+    <Resource Include="Items\Belt\unique_belt_013.png" />
+    <Resource Include="Items\Belt\unique_belt_014.png" />
+    <Resource Include="Items\Belt\unique_belt_015.png" />
+    <Resource Include="Items\Belt\unique_belt_01_p3.png" />
+    <Resource Include="Items\Belt\unique_belt_02.png" />
+    <Resource Include="Items\Belt\unique_belt_02_p3.png" />
+    <Resource Include="Items\Belt\unique_belt_03.png" />
+    <Resource Include="Items\Belt\unique_belt_03_p3.png" />
+    <Resource Include="Items\Belt\unique_belt_04.png" />
+    <Resource Include="Items\Belt\unique_belt_05.png" />
+    <Resource Include="Items\Belt\unique_belt_06.png" />
+    <Resource Include="Items\Belt\unique_belt_101.png" />
+    <Resource Include="Items\Belt\unique_belt_102.png" />
+    <Resource Include="Items\Belt\unique_belt_103.png" />
+    <Resource Include="Items\Belt\unique_belt_104.png" />
+    <Resource Include="Items\Belt\unique_belt_105.png" />
+    <Resource Include="Items\Belt\unique_belt_106.png" />
+    <Resource Include="Items\Belt\unique_belt_107.png" />
+    <Resource Include="Items\Belt\unique_belt_108.png" />
+    <Resource Include="Items\Belt\unique_belt_set_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt_Barbarian\barbbelt_001.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_002.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_003.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_004.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_101.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_102.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_103.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_104.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_201.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_202.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_203.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_204.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_205.png" />
+    <Resource Include="Items\Belt_Barbarian\barbbelt_206.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_001.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_002.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_003.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_004.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_005.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_006.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_006_p3.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_007.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_008.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_009.png" />
+    <Resource Include="Items\Belt_Barbarian\unique_barbbelt_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Boots\boots_001.png" />
+    <Resource Include="Items\Boots\boots_002.png" />
+    <Resource Include="Items\Boots\boots_003.png" />
+    <Resource Include="Items\Boots\boots_004.png" />
+    <Resource Include="Items\Boots\boots_005.png" />
+    <Resource Include="Items\Boots\boots_006.png" />
+    <Resource Include="Items\Boots\boots_101.png" />
+    <Resource Include="Items\Boots\boots_102.png" />
+    <Resource Include="Items\Boots\boots_103.png" />
+    <Resource Include="Items\Boots\boots_104.png" />
+    <Resource Include="Items\Boots\boots_105.png" />
+    <Resource Include="Items\Boots\boots_201.png" />
+    <Resource Include="Items\Boots\boots_202.png" />
+    <Resource Include="Items\Boots\boots_203.png" />
+    <Resource Include="Items\Boots\boots_204.png" />
+    <Resource Include="Items\Boots\boots_205.png" />
+    <Resource Include="Items\Boots\boots_206.png" />
+    <Resource Include="Items\Boots\boots_207.png" />
+    <Resource Include="Items\Boots\boots_208.png" />
+    <Resource Include="Items\Boots\boots_unique_002.png" />
+    <Resource Include="Items\Boots\boots_unique_003.png" />
+    <Resource Include="Items\Boots\unique_boots_001.png" />
+    <Resource Include="Items\Boots\unique_boots_005.png" />
+    <Resource Include="Items\Boots\unique_boots_007.png" />
+    <Resource Include="Items\Boots\unique_boots_008.png" />
+    <Resource Include="Items\Boots\unique_boots_009.png" />
+    <Resource Include="Items\Boots\unique_boots_01.png" />
+    <Resource Include="Items\Boots\unique_boots_010.png" />
+    <Resource Include="Items\Boots\unique_boots_011.png" />
+    <Resource Include="Items\Boots\unique_boots_012.png" />
+    <Resource Include="Items\Boots\unique_boots_013.png" />
+    <Resource Include="Items\Boots\unique_boots_014.png" />
+    <Resource Include="Items\Boots\unique_boots_015.png" />
+    <Resource Include="Items\Boots\unique_boots_017.png" />
+    <Resource Include="Items\Boots\unique_boots_018.png" />
+    <Resource Include="Items\Boots\unique_boots_019.png" />
+    <Resource Include="Items\Boots\unique_boots_02.png" />
+    <Resource Include="Items\Boots\unique_boots_102.png" />
+    <Resource Include="Items\Boots\unique_boots_103.png" />
+    <Resource Include="Items\Boots\unique_boots_104.png" />
+    <Resource Include="Items\Boots\unique_boots_set_01.png" />
+    <Resource Include="Items\Boots\unique_boots_set_01_p2.png" />
+    <Resource Include="Items\Boots\unique_boots_set_01_p3.png" />
+    <Resource Include="Items\Boots\unique_boots_set_02.png" />
+    <Resource Include="Items\Boots\unique_boots_set_02_p3.png" />
+    <Resource Include="Items\Boots\unique_boots_set_03.png" />
+    <Resource Include="Items\Boots\unique_boots_set_03_p3.png" />
+    <Resource Include="Items\Boots\unique_boots_set_05.png" />
+    <Resource Include="Items\Boots\unique_boots_set_06.png" />
+    <Resource Include="Items\Boots\unique_boots_set_07.png" />
+    <Resource Include="Items\Boots\unique_boots_set_08.png" />
+    <Resource Include="Items\Boots\unique_boots_set_09.png" />
+    <Resource Include="Items\Boots\unique_boots_set_10.png" />
+    <Resource Include="Items\Boots\unique_boots_set_13.png" />
+    <Resource Include="Items\Boots\unique_boots_set_14.png" />
+    <Resource Include="Items\Boots\unique_boots_set_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bow\bow_001.png" />
+    <Resource Include="Items\Bow\bow_002.png" />
+    <Resource Include="Items\Bow\bow_003.png" />
+    <Resource Include="Items\Bow\bow_004.png" />
+    <Resource Include="Items\Bow\bow_005.png" />
+    <Resource Include="Items\Bow\bow_006.png" />
+    <Resource Include="Items\Bow\bow_101.png" />
+    <Resource Include="Items\Bow\bow_102.png" />
+    <Resource Include="Items\Bow\bow_103.png" />
+    <Resource Include="Items\Bow\bow_104.png" />
+    <Resource Include="Items\Bow\bow_105.png" />
+    <Resource Include="Items\Bow\bow_106.png" />
+    <Resource Include="Items\Bow\bow_201.png" />
+    <Resource Include="Items\Bow\bow_202.png" />
+    <Resource Include="Items\Bow\bow_203.png" />
+    <Resource Include="Items\Bow\bow_204.png" />
+    <Resource Include="Items\Bow\bow_205.png" />
+    <Resource Include="Items\Bow\bow_206.png" />
+    <Resource Include="Items\Bow\bow_301.png" />
+    <Resource Include="Items\Bow\bow_302.png" />
+    <Resource Include="Items\Bow\p1_bow_norm_promo_01.png" />
+    <Resource Include="Items\Bow\unique_bow_001.png" />
+    <Resource Include="Items\Bow\unique_bow_005.png" />
+    <Resource Include="Items\Bow\unique_bow_007.png" />
+    <Resource Include="Items\Bow\unique_bow_008.png" />
+    <Resource Include="Items\Bow\unique_bow_009.png" />
+    <Resource Include="Items\Bow\unique_bow_010.png" />
+    <Resource Include="Items\Bow\unique_bow_015.png" />
+    <Resource Include="Items\Bow\unique_bow_101.png" />
+    <Resource Include="Items\Bow\unique_bow_102.png" />
+    <Resource Include="Items\Bow\unique_bow_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\bracers_001.png" />
+    <Resource Include="Items\Bracer\bracers_002.png" />
+    <Resource Include="Items\Bracer\bracers_003.png" />
+    <Resource Include="Items\Bracer\bracers_004.png" />
+    <Resource Include="Items\Bracer\bracers_005.png" />
+    <Resource Include="Items\Bracer\bracers_006.png" />
+    <Resource Include="Items\Bracer\bracers_101.png" />
+    <Resource Include="Items\Bracer\bracers_102.png" />
+    <Resource Include="Items\Bracer\bracers_103.png" />
+    <Resource Include="Items\Bracer\bracers_104.png" />
+    <Resource Include="Items\Bracer\bracers_105.png" />
+    <Resource Include="Items\Bracer\bracers_201.png" />
+    <Resource Include="Items\Bracer\bracers_202.png" />
+    <Resource Include="Items\Bracer\bracers_203.png" />
+    <Resource Include="Items\Bracer\bracers_204.png" />
+    <Resource Include="Items\Bracer\bracers_205.png" />
+    <Resource Include="Items\Bracer\bracers_206.png" />
+    <Resource Include="Items\Bracer\bracers_207.png" />
+    <Resource Include="Items\Bracer\bracers_208.png" />
+    <Resource Include="Items\Bracer\unique_bracer_001.png" />
+    <Resource Include="Items\Bracer\unique_bracer_002.png" />
+    <Resource Include="Items\Bracer\unique_bracer_003.png" />
+    <Resource Include="Items\Bracer\unique_bracer_004.png" />
+    <Resource Include="Items\Bracer\unique_bracer_005.png" />
+    <Resource Include="Items\Bracer\unique_bracer_006.png" />
+    <Resource Include="Items\Bracer\unique_bracer_007.png" />
+    <Resource Include="Items\Bracer\unique_bracer_009.png" />
+    <Resource Include="Items\Bracer\unique_bracer_010.png" />
+    <Resource Include="Items\Bracer\unique_bracer_011.png" />
+    <Resource Include="Items\Bracer\unique_bracer_101.png" />
+    <Resource Include="Items\Bracer\unique_bracer_101_p3.png" />
+    <Resource Include="Items\Bracer\unique_bracer_102.png" />
+    <Resource Include="Items\Bracer\unique_bracer_103.png" />
+    <Resource Include="Items\Bracer\unique_bracer_103_p3.png" />
+    <Resource Include="Items\Bracer\unique_bracer_104.png" />
+    <Resource Include="Items\Bracer\unique_bracer_104_p3.png" />
+    <Resource Include="Items\Bracer\unique_bracer_105.png" />
+    <Resource Include="Items\Bracer\unique_bracer_105_p3.png" />
+    <Resource Include="Items\Bracer\unique_bracer_106.png" />
+    <Resource Include="Items\Bracer\unique_bracer_106_p3.png" />
+    <Resource Include="Items\Bracer\unique_bracer_107.png" />
+    <Resource Include="Items\Bracer\unique_bracer_107_p3.png" />
+    <Resource Include="Items\Bracer\unique_bracer_109.png" />
+    <Resource Include="Items\Bracer\unique_bracer_110.png" />
+    <Resource Include="Items\Bracer\unique_bracer_set_02.png" />
+    <Resource Include="Items\Bracer\unique_bracer_set_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_000.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_001.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_002.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_003.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_004.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_101.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_102.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_103.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_104.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_201.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_202.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_203.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_204.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_205.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_206.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_301.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_1h_302.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_norm_unique_01.png" />
+    <Resource Include="Items\CeremonialDagger\ceremonialdagger_norm_unique_02.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_001.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_002.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_003.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_004.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_006.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_008.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_009.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_011.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_101.png" />
+    <Resource Include="Items\CeremonialDagger\unique_ceremonialdagger_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Chest_Armor\chestarmor_001.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_002.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_003.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_004.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_005.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_006.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_101.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_102.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_103.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_104.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_105.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_201.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_202.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_203.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_204.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_205.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_206.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_207.png" />
+    <Resource Include="Items\Chest_Armor\chestarmor_208.png" />
+    <Resource Include="Items\Chest_Armor\unique_chestarmor_028.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_001.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_002.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_006.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_010.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_012.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_013.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_014.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_015.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_016.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_018.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_019.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_025.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_026.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_027.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_101.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_102.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_01.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_01_p2.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_01_p3.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_02.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_02_p3.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_03_p3.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_05.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_06.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_07.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_08.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_09.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_10.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_13.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_14.png" />
+    <Resource Include="Items\Chest_Armor\unique_chest_set_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Cloak\cloak_001.png" />
+    <Resource Include="Items\Cloak\cloak_002.png" />
+    <Resource Include="Items\Cloak\cloak_003.png" />
+    <Resource Include="Items\Cloak\cloak_004.png" />
+    <Resource Include="Items\Cloak\cloak_101.png" />
+    <Resource Include="Items\Cloak\cloak_102.png" />
+    <Resource Include="Items\Cloak\cloak_103.png" />
+    <Resource Include="Items\Cloak\cloak_104.png" />
+    <Resource Include="Items\Cloak\cloak_201.png" />
+    <Resource Include="Items\Cloak\cloak_202.png" />
+    <Resource Include="Items\Cloak\cloak_203.png" />
+    <Resource Include="Items\Cloak\cloak_204.png" />
+    <Resource Include="Items\Cloak\cloak_205.png" />
+    <Resource Include="Items\Cloak\cloak_206.png" />
+    <Resource Include="Items\Cloak\unique_chest_set_03.png" />
+    <Resource Include="Items\Cloak\unique_cloak_001.png" />
+    <Resource Include="Items\Cloak\unique_cloak_002.png" />
+    <Resource Include="Items\Cloak\unique_cloak_005.png" />
+    <Resource Include="Items\Cloak\unique_cloak_006.png" />
+    <Resource Include="Items\Cloak\unique_cloak_101.png" />
+    <Resource Include="Items\Cloak\unique_cloak_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\CombatStaff\combatstaff_2h_001.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_002.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_003.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_004.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_101.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_102.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_103.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_104.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_201.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_202.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_203.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_204.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_205.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_206.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_301.png" />
+    <Resource Include="Items\CombatStaff\combatstaff_2h_302.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_001.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_002.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_003.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_004.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_005.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_007.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_008.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_009.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_101.png" />
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_asheara.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_aughild.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_borns.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_cains.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_captaincrimsons.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_demon.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_guardian.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_hallowed.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_set_sage.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_axe_1h_004.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_axe_2h_010.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_belt_004.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_boots_005.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_bow_007.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_bow_010.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_bracer_001.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_bracer_103.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_ceremonialdagger_006.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_chest_019.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_combatstaff_2h_004.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_combatstaff_2h_008.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_crushield_101.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_dagger_006.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_fist_004.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_flail_1h_101.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_gloves_001.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_handxbow_006.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_helm_011.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_infernalmachine_diablo.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_infernalmachine_ghom.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_infernalmachine_siegebreaker.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_infernalmachine_skeletonking.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_mace_1h_009.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_mace_2h_006.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_mighty_1h_001.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_mighty_2h_012.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_mojo_002.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_orb_004.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_pants_005.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_quiver_003.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_shield_011.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_shoulder_007.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_staff_002.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_sword_1h_019.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_wand_009.png" />
+    <Resource Include="Items\Crafting_Materials\craftingreagent_legendary_unique_xbow_004.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_assortedparts_01.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_demonic_reagent.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_legendary_01.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_looted_reagent_01.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_magic_01.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_rare_01.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_01b.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_01c.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_02b.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_02c.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_03b.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_03c.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_04a.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_04b.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_04c.png" />
+    <Resource Include="Items\Crafting_Materials\crafting_tier_04d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Crafting_Plans\craftingplan_jeweler_rare.png" />
+    <Resource Include="Items\Crafting_Plans\craftingplan_smith_leg.png" />
+    <Resource Include="Items\Crafting_Plans\craftingplan_smith_rare.png" />
+    <Resource Include="Items\Crafting_Plans\craftingplan_smith_set.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Crossbow\crossbow_001.png" />
+    <Resource Include="Items\Crossbow\crossbow_002.png" />
+    <Resource Include="Items\Crossbow\crossbow_003.png" />
+    <Resource Include="Items\Crossbow\crossbow_004.png" />
+    <Resource Include="Items\Crossbow\crossbow_005.png" />
+    <Resource Include="Items\Crossbow\crossbow_006.png" />
+    <Resource Include="Items\Crossbow\crossbow_007.png" />
+    <Resource Include="Items\Crossbow\crossbow_101.png" />
+    <Resource Include="Items\Crossbow\crossbow_102.png" />
+    <Resource Include="Items\Crossbow\crossbow_103.png" />
+    <Resource Include="Items\Crossbow\crossbow_104.png" />
+    <Resource Include="Items\Crossbow\crossbow_105.png" />
+    <Resource Include="Items\Crossbow\crossbow_106.png" />
+    <Resource Include="Items\Crossbow\crossbow_107.png" />
+    <Resource Include="Items\Crossbow\crossbow_201.png" />
+    <Resource Include="Items\Crossbow\crossbow_202.png" />
+    <Resource Include="Items\Crossbow\crossbow_203.png" />
+    <Resource Include="Items\Crossbow\crossbow_204.png" />
+    <Resource Include="Items\Crossbow\crossbow_205.png" />
+    <Resource Include="Items\Crossbow\crossbow_206.png" />
+    <Resource Include="Items\Crossbow\crossbow_207.png" />
+    <Resource Include="Items\Crossbow\crossbow_301.png" />
+    <Resource Include="Items\Crossbow\crossbow_302.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_001.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_002.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_003.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_004.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_006.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_011.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_012.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_101.png" />
+    <Resource Include="Items\Crossbow\unique_xbow_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\CrusaderShield\crusadershield_000.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_001.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_002.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_003.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_004.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_005.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_006.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_007.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_101.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_102.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_103.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_104.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_105.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_106.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_107.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_201.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_202.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_203.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_204.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_205.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_206.png" />
+    <Resource Include="Items\CrusaderShield\crusadershield_207.png" />
+    <Resource Include="Items\CrusaderShield\crushield_norm_unique_01.png" />
+    <Resource Include="Items\CrusaderShield\crushield_norm_unique_02.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_101.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_102.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_103.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_104.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_105.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_106.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_107.png" />
+    <Resource Include="Items\CrusaderShield\unique_crushield_108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Dagger\dagger_001.png" />
+    <Resource Include="Items\Dagger\dagger_002.png" />
+    <Resource Include="Items\Dagger\dagger_003.png" />
+    <Resource Include="Items\Dagger\dagger_004.png" />
+    <Resource Include="Items\Dagger\dagger_005.png" />
+    <Resource Include="Items\Dagger\dagger_006.png" />
+    <Resource Include="Items\Dagger\dagger_007.png" />
+    <Resource Include="Items\Dagger\dagger_101.png" />
+    <Resource Include="Items\Dagger\dagger_102.png" />
+    <Resource Include="Items\Dagger\dagger_103.png" />
+    <Resource Include="Items\Dagger\dagger_104.png" />
+    <Resource Include="Items\Dagger\dagger_105.png" />
+    <Resource Include="Items\Dagger\dagger_106.png" />
+    <Resource Include="Items\Dagger\dagger_107.png" />
+    <Resource Include="Items\Dagger\dagger_201.png" />
+    <Resource Include="Items\Dagger\dagger_202.png" />
+    <Resource Include="Items\Dagger\dagger_203.png" />
+    <Resource Include="Items\Dagger\dagger_204.png" />
+    <Resource Include="Items\Dagger\dagger_205.png" />
+    <Resource Include="Items\Dagger\dagger_206.png" />
+    <Resource Include="Items\Dagger\dagger_207.png" />
+    <Resource Include="Items\Dagger\dagger_301.png" />
+    <Resource Include="Items\Dagger\dagger_302.png" />
+    <Resource Include="Items\Dagger\unique_dagger_002.png" />
+    <Resource Include="Items\Dagger\unique_dagger_003.png" />
+    <Resource Include="Items\Dagger\unique_dagger_006.png" />
+    <Resource Include="Items\Dagger\unique_dagger_007.png" />
+    <Resource Include="Items\Dagger\unique_dagger_010.png" />
+    <Resource Include="Items\Dagger\unique_dagger_103.png" />
+    <Resource Include="Items\Dagger\unique_dagger_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Demonic_KeyP2\craftingreagent_legendary_unique_infernalmachine_diablo.png" />
+    <Resource Include="Items\Demonic_KeyP2\craftingreagent_legendary_unique_infernalmachine_ghom.png" />
+    <Resource Include="Items\Demonic_KeyP2\craftingreagent_legendary_unique_infernalmachine_siegebreaker.png" />
+    <Resource Include="Items\Demonic_KeyP2\craftingreagent_legendary_unique_infernalmachine_skeletonking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Demonic_Organ\demonorgan_diablo.png" />
+    <Resource Include="Items\Demonic_Organ\demonorgan_ghom.png" />
+    <Resource Include="Items\Demonic_Organ\demonorgan_siegebreaker.png" />
+    <Resource Include="Items\Demonic_Organ\demonorgan_skeletonking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_001.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_002.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_101.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_102.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_103.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_104.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_201.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_202.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_203.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_204.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_205.png" />
+    <Resource Include="Items\Enchantress_Focus\enchantress_special_206.png" />
+    <Resource Include="Items\Enchantress_Focus\x1_followeritem_enchantress_legendary_01.png" />
+    <Resource Include="Items\Enchantress_Focus\x1_followeritem_enchantress_legendary_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_000.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_001.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_002.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_003.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_004.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_101.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_102.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_103.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_104.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_201.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_202.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_203.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_204.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_205.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_206.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_301.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_1h_302.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_norm_unique_01_p3.png" />
+    <Resource Include="Items\Fist_Weapon\fistweapon_norm_unique_02.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_003.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_004.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_005.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_006.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_007.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_008.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_009.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_010.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_011.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_012.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_013.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_015.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_101.png" />
+    <Resource Include="Items\Fist_Weapon\unique_fist_promo_01_x1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_1H\flail1h_norm_unique_01_p3.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_000.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_001.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_002.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_003.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_004.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_005.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_101.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_102.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_103.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_104.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_105.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_201.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_202.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_203.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_204.png" />
+    <Resource Include="Items\Flail_1H\flail_1h_205.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_101.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_102.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_103.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_104.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_105.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_106.png" />
+    <Resource Include="Items\Flail_1H\unique_flail_1h_107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_2H\flail_2h_001.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_002.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_003.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_004.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_005.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_101.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_102.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_103.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_104.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_105.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_201.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_202.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_203.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_204.png" />
+    <Resource Include="Items\Flail_2H\flail_2h_205.png" />
+    <Resource Include="Items\Flail_2H\unique_flail_2h_102.png" />
+    <Resource Include="Items\Flail_2H\unique_flail_2h_103.png" />
+    <Resource Include="Items\Flail_2H\unique_flail_2h_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Gems\amethyst_01.png" />
+    <Resource Include="Items\Gems\amethyst_02.png" />
+    <Resource Include="Items\Gems\amethyst_03.png" />
+    <Resource Include="Items\Gems\amethyst_04.png" />
+    <Resource Include="Items\Gems\amethyst_05.png" />
+    <Resource Include="Items\Gems\amethyst_06.png" />
+    <Resource Include="Items\Gems\amethyst_07.png" />
+    <Resource Include="Items\Gems\amethyst_08.png" />
+    <Resource Include="Items\Gems\amethyst_09.png" />
+    <Resource Include="Items\Gems\amethyst_10.png" />
+    <Resource Include="Items\Gems\amethyst_11.png" />
+    <Resource Include="Items\Gems\amethyst_12.png" />
+    <Resource Include="Items\Gems\amethyst_13.png" />
+    <Resource Include="Items\Gems\amethyst_14.png" />
+    <Resource Include="Items\Gems\amethyst_15.png" />
+    <Resource Include="Items\Gems\amethyst_16.png" />
+    <Resource Include="Items\Gems\amethyst_17.png" />
+    <Resource Include="Items\Gems\amethyst_18.png" />
+    <Resource Include="Items\Gems\amethyst_19.png" />
+    <Resource Include="Items\Gems\diamond_01.png" />
+    <Resource Include="Items\Gems\diamond_02.png" />
+    <Resource Include="Items\Gems\diamond_03.png" />
+    <Resource Include="Items\Gems\diamond_04.png" />
+    <Resource Include="Items\Gems\diamond_05.png" />
+    <Resource Include="Items\Gems\diamond_06.png" />
+    <Resource Include="Items\Gems\diamond_07.png" />
+    <Resource Include="Items\Gems\diamond_08.png" />
+    <Resource Include="Items\Gems\diamond_09.png" />
+    <Resource Include="Items\Gems\diamond_10.png" />
+    <Resource Include="Items\Gems\diamond_11.png" />
+    <Resource Include="Items\Gems\diamond_12.png" />
+    <Resource Include="Items\Gems\diamond_13.png" />
+    <Resource Include="Items\Gems\diamond_14.png" />
+    <Resource Include="Items\Gems\diamond_15.png" />
+    <Resource Include="Items\Gems\diamond_16.png" />
+    <Resource Include="Items\Gems\diamond_17.png" />
+    <Resource Include="Items\Gems\diamond_18.png" />
+    <Resource Include="Items\Gems\diamond_19.png" />
+    <Resource Include="Items\Gems\emerald_01.png" />
+    <Resource Include="Items\Gems\emerald_02.png" />
+    <Resource Include="Items\Gems\emerald_03.png" />
+    <Resource Include="Items\Gems\emerald_04.png" />
+    <Resource Include="Items\Gems\emerald_05.png" />
+    <Resource Include="Items\Gems\emerald_06.png" />
+    <Resource Include="Items\Gems\emerald_07.png" />
+    <Resource Include="Items\Gems\emerald_08.png" />
+    <Resource Include="Items\Gems\emerald_09.png" />
+    <Resource Include="Items\Gems\emerald_10.png" />
+    <Resource Include="Items\Gems\emerald_11.png" />
+    <Resource Include="Items\Gems\emerald_12.png" />
+    <Resource Include="Items\Gems\emerald_13.png" />
+    <Resource Include="Items\Gems\emerald_14.png" />
+    <Resource Include="Items\Gems\emerald_15.png" />
+    <Resource Include="Items\Gems\emerald_16.png" />
+    <Resource Include="Items\Gems\emerald_17.png" />
+    <Resource Include="Items\Gems\emerald_18.png" />
+    <Resource Include="Items\Gems\emerald_19.png" />
+    <Resource Include="Items\Gems\ruby_01.png" />
+    <Resource Include="Items\Gems\ruby_02.png" />
+    <Resource Include="Items\Gems\ruby_03.png" />
+    <Resource Include="Items\Gems\ruby_04.png" />
+    <Resource Include="Items\Gems\ruby_05.png" />
+    <Resource Include="Items\Gems\ruby_06.png" />
+    <Resource Include="Items\Gems\ruby_07.png" />
+    <Resource Include="Items\Gems\ruby_08.png" />
+    <Resource Include="Items\Gems\ruby_09.png" />
+    <Resource Include="Items\Gems\ruby_10.png" />
+    <Resource Include="Items\Gems\ruby_11.png" />
+    <Resource Include="Items\Gems\ruby_12.png" />
+    <Resource Include="Items\Gems\ruby_13.png" />
+    <Resource Include="Items\Gems\ruby_14.png" />
+    <Resource Include="Items\Gems\ruby_15.png" />
+    <Resource Include="Items\Gems\ruby_16.png" />
+    <Resource Include="Items\Gems\ruby_17.png" />
+    <Resource Include="Items\Gems\ruby_18.png" />
+    <Resource Include="Items\Gems\ruby_19.png" />
+    <Resource Include="Items\Gems\topaz_01.png" />
+    <Resource Include="Items\Gems\topaz_02.png" />
+    <Resource Include="Items\Gems\topaz_03.png" />
+    <Resource Include="Items\Gems\topaz_04.png" />
+    <Resource Include="Items\Gems\topaz_05.png" />
+    <Resource Include="Items\Gems\topaz_06.png" />
+    <Resource Include="Items\Gems\topaz_07.png" />
+    <Resource Include="Items\Gems\topaz_08.png" />
+    <Resource Include="Items\Gems\topaz_09.png" />
+    <Resource Include="Items\Gems\topaz_10.png" />
+    <Resource Include="Items\Gems\topaz_11.png" />
+    <Resource Include="Items\Gems\topaz_12.png" />
+    <Resource Include="Items\Gems\topaz_13.png" />
+    <Resource Include="Items\Gems\topaz_14.png" />
+    <Resource Include="Items\Gems\topaz_15.png" />
+    <Resource Include="Items\Gems\topaz_16.png" />
+    <Resource Include="Items\Gems\topaz_17.png" />
+    <Resource Include="Items\Gems\topaz_18.png" />
+    <Resource Include="Items\Gems\topaz_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Gift\consumable_add_sockets_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Gloves\gloves_001.png" />
+    <Resource Include="Items\Gloves\gloves_002.png" />
+    <Resource Include="Items\Gloves\gloves_003.png" />
+    <Resource Include="Items\Gloves\gloves_004.png" />
+    <Resource Include="Items\Gloves\gloves_005.png" />
+    <Resource Include="Items\Gloves\gloves_006.png" />
+    <Resource Include="Items\Gloves\gloves_101.png" />
+    <Resource Include="Items\Gloves\gloves_102.png" />
+    <Resource Include="Items\Gloves\gloves_103.png" />
+    <Resource Include="Items\Gloves\gloves_104.png" />
+    <Resource Include="Items\Gloves\gloves_105.png" />
+    <Resource Include="Items\Gloves\gloves_201.png" />
+    <Resource Include="Items\Gloves\gloves_202.png" />
+    <Resource Include="Items\Gloves\gloves_203.png" />
+    <Resource Include="Items\Gloves\gloves_204.png" />
+    <Resource Include="Items\Gloves\gloves_205.png" />
+    <Resource Include="Items\Gloves\gloves_206.png" />
+    <Resource Include="Items\Gloves\gloves_207.png" />
+    <Resource Include="Items\Gloves\gloves_208.png" />
+    <Resource Include="Items\Gloves\unique_gloves_001.png" />
+    <Resource Include="Items\Gloves\unique_gloves_002.png" />
+    <Resource Include="Items\Gloves\unique_gloves_003.png" />
+    <Resource Include="Items\Gloves\unique_gloves_007.png" />
+    <Resource Include="Items\Gloves\unique_gloves_008.png" />
+    <Resource Include="Items\Gloves\unique_gloves_009.png" />
+    <Resource Include="Items\Gloves\unique_gloves_01.png" />
+    <Resource Include="Items\Gloves\unique_gloves_011.png" />
+    <Resource Include="Items\Gloves\unique_gloves_014.png" />
+    <Resource Include="Items\Gloves\unique_gloves_015.png" />
+    <Resource Include="Items\Gloves\unique_gloves_017.png" />
+    <Resource Include="Items\Gloves\unique_gloves_02.png" />
+    <Resource Include="Items\Gloves\unique_gloves_03.png" />
+    <Resource Include="Items\Gloves\unique_gloves_04.png" />
+    <Resource Include="Items\Gloves\unique_gloves_101.png" />
+    <Resource Include="Items\Gloves\unique_gloves_102.png" />
+    <Resource Include="Items\Gloves\unique_gloves_103.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_01.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_01_p2.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_01_p3.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_02.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_02_p3.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_03.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_03_p3.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_05.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_06.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_07.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_08.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_09.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_10.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_11.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_12.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_13.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_14.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_15.png" />
+    <Resource Include="Items\Gloves\unique_gloves_set_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\HandXbow\handxbow_000.png" />
+    <Resource Include="Items\HandXbow\handxbow_001.png" />
+    <Resource Include="Items\HandXbow\handxbow_002.png" />
+    <Resource Include="Items\HandXbow\handxbow_003.png" />
+    <Resource Include="Items\HandXbow\handxbow_004.png" />
+    <Resource Include="Items\HandXbow\handxbow_005.png" />
+    <Resource Include="Items\HandXbow\handxbow_006.png" />
+    <Resource Include="Items\HandXbow\handxbow_007.png" />
+    <Resource Include="Items\HandXbow\handxbow_008.png" />
+    <Resource Include="Items\HandXbow\handxbow_101.png" />
+    <Resource Include="Items\HandXbow\handxbow_102.png" />
+    <Resource Include="Items\HandXbow\handxbow_103.png" />
+    <Resource Include="Items\HandXbow\handxbow_104.png" />
+    <Resource Include="Items\HandXbow\handxbow_105.png" />
+    <Resource Include="Items\HandXbow\handxbow_106.png" />
+    <Resource Include="Items\HandXbow\handxbow_107.png" />
+    <Resource Include="Items\HandXbow\handxbow_108.png" />
+    <Resource Include="Items\HandXbow\handxbow_201.png" />
+    <Resource Include="Items\HandXbow\handxbow_202.png" />
+    <Resource Include="Items\HandXbow\handxbow_203.png" />
+    <Resource Include="Items\HandXbow\handxbow_204.png" />
+    <Resource Include="Items\HandXbow\handxbow_205.png" />
+    <Resource Include="Items\HandXbow\handxbow_206.png" />
+    <Resource Include="Items\HandXbow\handxbow_207.png" />
+    <Resource Include="Items\HandXbow\handxbow_208.png" />
+    <Resource Include="Items\HandXbow\handxbow_301.png" />
+    <Resource Include="Items\HandXbow\handxbow_302.png" />
+    <Resource Include="Items\HandXbow\handxbow_norm_unique_03_p3.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_001.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_002.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_003.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_004.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_005.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_005_p3.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_006.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_007.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_012.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_016.png" />
+    <Resource Include="Items\HandXbow\unique_handxbow_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Helm\helm_002.png" />
+    <Resource Include="Items\Helm\helm_003.png" />
+    <Resource Include="Items\Helm\helm_004.png" />
+    <Resource Include="Items\Helm\helm_005.png" />
+    <Resource Include="Items\Helm\helm_006.png" />
+    <Resource Include="Items\Helm\helm_101.png" />
+    <Resource Include="Items\Helm\helm_102.png" />
+    <Resource Include="Items\Helm\helm_103.png" />
+    <Resource Include="Items\Helm\helm_104.png" />
+    <Resource Include="Items\Helm\helm_105.png" />
+    <Resource Include="Items\Helm\helm_201.png" />
+    <Resource Include="Items\Helm\helm_202.png" />
+    <Resource Include="Items\Helm\helm_203.png" />
+    <Resource Include="Items\Helm\helm_204.png" />
+    <Resource Include="Items\Helm\helm_205.png" />
+    <Resource Include="Items\Helm\helm_206.png" />
+    <Resource Include="Items\Helm\helm_207.png" />
+    <Resource Include="Items\Helm\helm_208.png" />
+    <Resource Include="Items\Helm\unique_helm_001.png" />
+    <Resource Include="Items\Helm\unique_helm_002.png" />
+    <Resource Include="Items\Helm\unique_helm_003.png" />
+    <Resource Include="Items\Helm\unique_helm_004.png" />
+    <Resource Include="Items\Helm\unique_helm_006.png" />
+    <Resource Include="Items\Helm\unique_helm_007.png" />
+    <Resource Include="Items\Helm\unique_helm_008.png" />
+    <Resource Include="Items\Helm\unique_helm_009.png" />
+    <Resource Include="Items\Helm\unique_helm_010.png" />
+    <Resource Include="Items\Helm\unique_helm_011.png" />
+    <Resource Include="Items\Helm\unique_helm_012.png" />
+    <Resource Include="Items\Helm\unique_helm_014.png" />
+    <Resource Include="Items\Helm\unique_helm_015.png" />
+    <Resource Include="Items\Helm\unique_helm_016.png" />
+    <Resource Include="Items\Helm\unique_helm_102.png" />
+    <Resource Include="Items\Helm\unique_helm_103.png" />
+    <Resource Include="Items\Helm\unique_helm_set_01_p2.png" />
+    <Resource Include="Items\Helm\unique_helm_set_01_p3.png" />
+    <Resource Include="Items\Helm\unique_helm_set_02.png" />
+    <Resource Include="Items\Helm\unique_helm_set_02_p3.png" />
+    <Resource Include="Items\Helm\unique_helm_set_03.png" />
+    <Resource Include="Items\Helm\unique_helm_set_03_p3.png" />
+    <Resource Include="Items\Helm\unique_helm_set_05.png" />
+    <Resource Include="Items\Helm\unique_helm_set_06.png" />
+    <Resource Include="Items\Helm\unique_helm_set_07.png" />
+    <Resource Include="Items\Helm\unique_helm_set_08.png" />
+    <Resource Include="Items\Helm\unique_helm_set_09.png" />
+    <Resource Include="Items\Helm\unique_helm_set_10.png" />
+    <Resource Include="Items\Helm\unique_helm_set_11.png" />
+    <Resource Include="Items\Helm\unique_helm_set_12.png" />
+    <Resource Include="Items\Helm\unique_helm_set_13_p3.png" />
+    <Resource Include="Items\Helm\unique_helm_set_15.png" />
+    <Resource Include="Items\Helm\unique_helm_set_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\LegendaryGem\unique_gem_001.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_002.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_003.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_004.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_005.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_006.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_007.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_008.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_009.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_010.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_011.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_012.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_013.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_014.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_015.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_016.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_017.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mace_1H\mace_1h_001.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_002.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_003.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_004.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_005.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_006.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_007.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_101.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_102.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_103.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_104.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_105.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_106.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_107.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_201.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_202.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_203.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_204.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_205.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_206.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_207.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_301.png" />
+    <Resource Include="Items\Mace_1H\mace_1h_302.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_001.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_002.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_003.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_005.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_007.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_008.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_009.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_011.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_101.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_102.png" />
+    <Resource Include="Items\Mace_1H\unique_mace_1h_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mace_2H\mace_2h_002.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_003.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_004.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_005.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_006.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_101.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_102.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_103.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_104.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_105.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_106.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_201.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_202.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_203.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_204.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_205.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_206.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_301.png" />
+    <Resource Include="Items\Mace_2H\mace_2h_302.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_001.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_002.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_003.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_006.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_009.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_010.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_012.png" />
+    <Resource Include="Items\Mace_2H\unique_mace_2h_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_001.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_002.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_003.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_004.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_101.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_102.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_103.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_104.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_201.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_202.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_203.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_204.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_301.png" />
+    <Resource Include="Items\MightyWeapon_1H\mightyweapon1h_302.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_001.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_005.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_006.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_010.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_011.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_012.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_015.png" />
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_001.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_002.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_003.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_004.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_101.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_102.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_103.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_104.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_201.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_202.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_203.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_204.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_301.png" />
+    <Resource Include="Items\MightyWeapon_2H\mightyweapon2h_302.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_001.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_004.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_006.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_010.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_012.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_101.png" />
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_promo_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mojo\mojo_001.png" />
+    <Resource Include="Items\Mojo\mojo_002.png" />
+    <Resource Include="Items\Mojo\mojo_003.png" />
+    <Resource Include="Items\Mojo\mojo_004.png" />
+    <Resource Include="Items\Mojo\mojo_101.png" />
+    <Resource Include="Items\Mojo\mojo_102.png" />
+    <Resource Include="Items\Mojo\mojo_103.png" />
+    <Resource Include="Items\Mojo\mojo_104.png" />
+    <Resource Include="Items\Mojo\mojo_201.png" />
+    <Resource Include="Items\Mojo\mojo_202.png" />
+    <Resource Include="Items\Mojo\mojo_203.png" />
+    <Resource Include="Items\Mojo\mojo_204.png" />
+    <Resource Include="Items\Mojo\mojo_205.png" />
+    <Resource Include="Items\Mojo\mojo_206.png" />
+    <Resource Include="Items\Mojo\mojo_norm_unique_02_p3.png" />
+    <Resource Include="Items\Mojo\unique_mojo_002.png" />
+    <Resource Include="Items\Mojo\unique_mojo_003.png" />
+    <Resource Include="Items\Mojo\unique_mojo_004.png" />
+    <Resource Include="Items\Mojo\unique_mojo_008.png" />
+    <Resource Include="Items\Mojo\unique_mojo_009.png" />
+    <Resource Include="Items\Mojo\unique_mojo_010.png" />
+    <Resource Include="Items\Mojo\unique_mojo_011.png" />
+    <Resource Include="Items\Mojo\unique_mojo_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Orb\orb_001.png" />
+    <Resource Include="Items\Orb\orb_002.png" />
+    <Resource Include="Items\Orb\orb_003.png" />
+    <Resource Include="Items\Orb\orb_004.png" />
+    <Resource Include="Items\Orb\orb_101.png" />
+    <Resource Include="Items\Orb\orb_102.png" />
+    <Resource Include="Items\Orb\orb_103.png" />
+    <Resource Include="Items\Orb\orb_104.png" />
+    <Resource Include="Items\Orb\orb_201.png" />
+    <Resource Include="Items\Orb\orb_202.png" />
+    <Resource Include="Items\Orb\orb_203.png" />
+    <Resource Include="Items\Orb\orb_204.png" />
+    <Resource Include="Items\Orb\orb_205.png" />
+    <Resource Include="Items\Orb\orb_206.png" />
+    <Resource Include="Items\Orb\unique_orb_001.png" />
+    <Resource Include="Items\Orb\unique_orb_003.png" />
+    <Resource Include="Items\Orb\unique_orb_004.png" />
+    <Resource Include="Items\Orb\unique_orb_005.png" />
+    <Resource Include="Items\Orb\unique_orb_011.png" />
+    <Resource Include="Items\Orb\unique_orb_012.png" />
+    <Resource Include="Items\Orb\unique_orb_101.png" />
+    <Resource Include="Items\Orb\unique_orb_102.png" />
+    <Resource Include="Items\Orb\unique_orb_103.png" />
+    <Resource Include="Items\Orb\unique_orb_set_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Others\Goblin.png" />
+    <Resource Include="Items\Others\KeyWarden.png" />
+    <Resource Include="Items\Others\Shrine.png" />
+    <Resource Include="Items\Others\UniqueMonster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Pants\pants_001.png" />
+    <Resource Include="Items\Pants\pants_002.png" />
+    <Resource Include="Items\Pants\pants_003.png" />
+    <Resource Include="Items\Pants\pants_004.png" />
+    <Resource Include="Items\Pants\pants_005.png" />
+    <Resource Include="Items\Pants\pants_006.png" />
+    <Resource Include="Items\Pants\pants_101.png" />
+    <Resource Include="Items\Pants\pants_102.png" />
+    <Resource Include="Items\Pants\pants_103.png" />
+    <Resource Include="Items\Pants\pants_104.png" />
+    <Resource Include="Items\Pants\pants_105.png" />
+    <Resource Include="Items\Pants\pants_201.png" />
+    <Resource Include="Items\Pants\pants_202.png" />
+    <Resource Include="Items\Pants\pants_203.png" />
+    <Resource Include="Items\Pants\pants_204.png" />
+    <Resource Include="Items\Pants\pants_205.png" />
+    <Resource Include="Items\Pants\pants_206.png" />
+    <Resource Include="Items\Pants\pants_207.png" />
+    <Resource Include="Items\Pants\pants_208.png" />
+    <Resource Include="Items\Pants\unique_pants_001.png" />
+    <Resource Include="Items\Pants\unique_pants_002.png" />
+    <Resource Include="Items\Pants\unique_pants_005.png" />
+    <Resource Include="Items\Pants\unique_pants_006.png" />
+    <Resource Include="Items\Pants\unique_pants_007.png" />
+    <Resource Include="Items\Pants\unique_pants_008.png" />
+    <Resource Include="Items\Pants\unique_pants_009.png" />
+    <Resource Include="Items\Pants\unique_pants_01.png" />
+    <Resource Include="Items\Pants\unique_pants_010.png" />
+    <Resource Include="Items\Pants\unique_pants_012.png" />
+    <Resource Include="Items\Pants\unique_pants_013.png" />
+    <Resource Include="Items\Pants\unique_pants_014.png" />
+    <Resource Include="Items\Pants\unique_pants_02.png" />
+    <Resource Include="Items\Pants\unique_pants_03.png" />
+    <Resource Include="Items\Pants\unique_pants_04.png" />
+    <Resource Include="Items\Pants\unique_pants_101.png" />
+    <Resource Include="Items\Pants\unique_pants_102.png" />
+    <Resource Include="Items\Pants\unique_pants_set_01.png" />
+    <Resource Include="Items\Pants\unique_pants_set_01_p2.png" />
+    <Resource Include="Items\Pants\unique_pants_set_01_p3.png" />
+    <Resource Include="Items\Pants\unique_pants_set_02.png" />
+    <Resource Include="Items\Pants\unique_pants_set_02_p3.png" />
+    <Resource Include="Items\Pants\unique_pants_set_03.png" />
+    <Resource Include="Items\Pants\unique_pants_set_03_p3.png" />
+    <Resource Include="Items\Pants\unique_pants_set_05.png" />
+    <Resource Include="Items\Pants\unique_pants_set_06.png" />
+    <Resource Include="Items\Pants\unique_pants_set_07.png" />
+    <Resource Include="Items\Pants\unique_pants_set_08.png" />
+    <Resource Include="Items\Pants\unique_pants_set_09.png" />
+    <Resource Include="Items\Pants\unique_pants_set_10.png" />
+    <Resource Include="Items\Pants\unique_pants_set_13.png" />
+    <Resource Include="Items\Pants\unique_pants_set_14.png" />
+    <Resource Include="Items\Pants\unique_pants_set_15.png" />
+    <Resource Include="Items\Pants\unique_pants_set_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Polearm\polearm_001.png" />
+    <Resource Include="Items\Polearm\polearm_002.png" />
+    <Resource Include="Items\Polearm\polearm_003.png" />
+    <Resource Include="Items\Polearm\polearm_004.png" />
+    <Resource Include="Items\Polearm\polearm_005.png" />
+    <Resource Include="Items\Polearm\polearm_006.png" />
+    <Resource Include="Items\Polearm\polearm_007.png" />
+    <Resource Include="Items\Polearm\polearm_008.png" />
+    <Resource Include="Items\Polearm\polearm_101.png" />
+    <Resource Include="Items\Polearm\polearm_102.png" />
+    <Resource Include="Items\Polearm\polearm_103.png" />
+    <Resource Include="Items\Polearm\polearm_104.png" />
+    <Resource Include="Items\Polearm\polearm_105.png" />
+    <Resource Include="Items\Polearm\polearm_106.png" />
+    <Resource Include="Items\Polearm\polearm_107.png" />
+    <Resource Include="Items\Polearm\polearm_108.png" />
+    <Resource Include="Items\Polearm\polearm_201.png" />
+    <Resource Include="Items\Polearm\polearm_202.png" />
+    <Resource Include="Items\Polearm\polearm_203.png" />
+    <Resource Include="Items\Polearm\polearm_204.png" />
+    <Resource Include="Items\Polearm\polearm_205.png" />
+    <Resource Include="Items\Polearm\polearm_206.png" />
+    <Resource Include="Items\Polearm\polearm_207.png" />
+    <Resource Include="Items\Polearm\polearm_208.png" />
+    <Resource Include="Items\Polearm\polearm_301.png" />
+    <Resource Include="Items\Polearm\polearm_302.png" />
+    <Resource Include="Items\Polearm\unique_polearm_001.png" />
+    <Resource Include="Items\Polearm\unique_polearm_002.png" />
+    <Resource Include="Items\Polearm\unique_polearm_003.png" />
+    <Resource Include="Items\Polearm\unique_polearm_004.png" />
+    <Resource Include="Items\Polearm\unique_polearm_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Potion\healthpotionlegendary_01.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_02.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_03.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_04.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_05.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_06.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_07.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_08.png" />
+    <Resource Include="Items\Potion\healthpotionlegendary_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Quiver\quiver_001.png" />
+    <Resource Include="Items\Quiver\quiver_002.png" />
+    <Resource Include="Items\Quiver\quiver_003.png" />
+    <Resource Include="Items\Quiver\quiver_004.png" />
+    <Resource Include="Items\Quiver\quiver_005.png" />
+    <Resource Include="Items\Quiver\quiver_101.png" />
+    <Resource Include="Items\Quiver\quiver_102.png" />
+    <Resource Include="Items\Quiver\quiver_103.png" />
+    <Resource Include="Items\Quiver\quiver_104.png" />
+    <Resource Include="Items\Quiver\quiver_105.png" />
+    <Resource Include="Items\Quiver\quiver_201.png" />
+    <Resource Include="Items\Quiver\quiver_202.png" />
+    <Resource Include="Items\Quiver\quiver_203.png" />
+    <Resource Include="Items\Quiver\quiver_204.png" />
+    <Resource Include="Items\Quiver\quiver_205.png" />
+    <Resource Include="Items\Quiver\quiver_206.png" />
+    <Resource Include="Items\Quiver\quiver_207.png" />
+    <Resource Include="Items\Quiver\unique_quiver_001.png" />
+    <Resource Include="Items\Quiver\unique_quiver_002.png" />
+    <Resource Include="Items\Quiver\unique_quiver_003.png" />
+    <Resource Include="Items\Quiver\unique_quiver_004.png" />
+    <Resource Include="Items\Quiver\unique_quiver_005.png" />
+    <Resource Include="Items\Quiver\unique_quiver_006.png" />
+    <Resource Include="Items\Quiver\unique_quiver_007.png" />
+    <Resource Include="Items\Quiver\unique_quiver_101.png" />
+    <Resource Include="Items\Quiver\unique_quiver_102.png" />
+    <Resource Include="Items\Quiver\unique_quiver_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\ring_01.png" />
+    <Resource Include="Items\Ring\ring_02.png" />
+    <Resource Include="Items\Ring\ring_03.png" />
+    <Resource Include="Items\Ring\ring_04.png" />
+    <Resource Include="Items\Ring\ring_05.png" />
+    <Resource Include="Items\Ring\ring_06.png" />
+    <Resource Include="Items\Ring\ring_07.png" />
+    <Resource Include="Items\Ring\ring_08.png" />
+    <Resource Include="Items\Ring\ring_09.png" />
+    <Resource Include="Items\Ring\ring_10.png" />
+    <Resource Include="Items\Ring\ring_11.png" />
+    <Resource Include="Items\Ring\ring_12.png" />
+    <Resource Include="Items\Ring\ring_13.png" />
+    <Resource Include="Items\Ring\ring_14.png" />
+    <Resource Include="Items\Ring\ring_15.png" />
+    <Resource Include="Items\Ring\ring_16.png" />
+    <Resource Include="Items\Ring\ring_17.png" />
+    <Resource Include="Items\Ring\ring_18.png" />
+    <Resource Include="Items\Ring\ring_19.png" />
+    <Resource Include="Items\Ring\ring_20.png" />
+    <Resource Include="Items\Ring\ring_21.png" />
+    <Resource Include="Items\Ring\ring_22.png" />
+    <Resource Include="Items\Ring\ring_23.png" />
+    <Resource Include="Items\Ring\ring_24.png" />
+    <Resource Include="Items\Ring\ring_25.png" />
+    <Resource Include="Items\Ring\unique_ring_001.png" />
+    <Resource Include="Items\Ring\unique_ring_002.png" />
+    <Resource Include="Items\Ring\unique_ring_003.png" />
+    <Resource Include="Items\Ring\unique_ring_004.png" />
+    <Resource Include="Items\Ring\unique_ring_005.png" />
+    <Resource Include="Items\Ring\unique_ring_006.png" />
+    <Resource Include="Items\Ring\unique_ring_007.png" />
+    <Resource Include="Items\Ring\unique_ring_008.png" />
+    <Resource Include="Items\Ring\unique_ring_009.png" />
+    <Resource Include="Items\Ring\unique_ring_01.png" />
+    <Resource Include="Items\Ring\unique_ring_010.png" />
+    <Resource Include="Items\Ring\unique_ring_011.png" />
+    <Resource Include="Items\Ring\unique_ring_012.png" />
+    <Resource Include="Items\Ring\unique_ring_013.png" />
+    <Resource Include="Items\Ring\unique_ring_014.png" />
+    <Resource Include="Items\Ring\unique_ring_015.png" />
+    <Resource Include="Items\Ring\unique_ring_017.png" />
+    <Resource Include="Items\Ring\unique_ring_018.png" />
+    <Resource Include="Items\Ring\unique_ring_019.png" />
+    <Resource Include="Items\Ring\unique_ring_02.png" />
+    <Resource Include="Items\Ring\unique_ring_020.png" />
+    <Resource Include="Items\Ring\unique_ring_021.png" />
+    <Resource Include="Items\Ring\unique_ring_022.png" />
+    <Resource Include="Items\Ring\unique_ring_023.png" />
+    <Resource Include="Items\Ring\unique_ring_024.png" />
+    <Resource Include="Items\Ring\unique_ring_03.png" />
+    <Resource Include="Items\Ring\unique_ring_04.png" />
+    <Resource Include="Items\Ring\unique_ring_101.png" />
+    <Resource Include="Items\Ring\unique_ring_102.png" />
+    <Resource Include="Items\Ring\unique_ring_103.png" />
+    <Resource Include="Items\Ring\unique_ring_104.png" />
+    <Resource Include="Items\Ring\unique_ring_106.png" />
+    <Resource Include="Items\Ring\unique_ring_107.png" />
+    <Resource Include="Items\Ring\unique_ring_108.png" />
+    <Resource Include="Items\Ring\unique_ring_109.png" />
+    <Resource Include="Items\Ring\unique_ring_set_001.png" />
+    <Resource Include="Items\Ring\unique_ring_set_002.png" />
+    <Resource Include="Items\Ring\unique_ring_wizard_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_001.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_002.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_101.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_102.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_103.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_104.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_201.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_202.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_203.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_204.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_205.png" />
+    <Resource Include="Items\Scoundrel_token\scoundrel_special_206.png" />
+    <Resource Include="Items\Scoundrel_token\x1_followeritem_scoundrel_legendary_01.png" />
+    <Resource Include="Items\Scoundrel_token\x1_followeritem_scoundrel_legendary_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Shield\shield_000.png" />
+    <Resource Include="Items\Shield\shield_001.png" />
+    <Resource Include="Items\Shield\shield_002.png" />
+    <Resource Include="Items\Shield\shield_003.png" />
+    <Resource Include="Items\Shield\shield_004.png" />
+    <Resource Include="Items\Shield\shield_005.png" />
+    <Resource Include="Items\Shield\shield_006.png" />
+    <Resource Include="Items\Shield\shield_007.png" />
+    <Resource Include="Items\Shield\shield_101.png" />
+    <Resource Include="Items\Shield\shield_102.png" />
+    <Resource Include="Items\Shield\shield_103.png" />
+    <Resource Include="Items\Shield\shield_104.png" />
+    <Resource Include="Items\Shield\shield_105.png" />
+    <Resource Include="Items\Shield\shield_106.png" />
+    <Resource Include="Items\Shield\shield_107.png" />
+    <Resource Include="Items\Shield\shield_201.png" />
+    <Resource Include="Items\Shield\shield_202.png" />
+    <Resource Include="Items\Shield\shield_203.png" />
+    <Resource Include="Items\Shield\shield_203_104.png" />
+    <Resource Include="Items\Shield\shield_204.png" />
+    <Resource Include="Items\Shield\shield_204_104.png" />
+    <Resource Include="Items\Shield\shield_205.png" />
+    <Resource Include="Items\Shield\shield_205_104.png" />
+    <Resource Include="Items\Shield\shield_206.png" />
+    <Resource Include="Items\Shield\shield_206_104.png" />
+    <Resource Include="Items\Shield\shield_207.png" />
+    <Resource Include="Items\Shield\shield_207_104.png" />
+    <Resource Include="Items\Shield\shield_208.png" />
+    <Resource Include="Items\Shield\shield_209.png" />
+    <Resource Include="Items\Shield\unique_shield_002.png" />
+    <Resource Include="Items\Shield\unique_shield_004.png" />
+    <Resource Include="Items\Shield\unique_shield_007.png" />
+    <Resource Include="Items\Shield\unique_shield_008.png" />
+    <Resource Include="Items\Shield\unique_shield_009.png" />
+    <Resource Include="Items\Shield\unique_shield_011.png" />
+    <Resource Include="Items\Shield\unique_shield_012.png" />
+    <Resource Include="Items\Shield\unique_shield_101.png" />
+    <Resource Include="Items\Shield\unique_shield_102.png" />
+    <Resource Include="Items\Shield\unique_shield_104.png" />
+    <Resource Include="Items\Shield\unique_shield_107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Shoulders\shoulders_002.png" />
+    <Resource Include="Items\Shoulders\shoulders_003.png" />
+    <Resource Include="Items\Shoulders\shoulders_004.png" />
+    <Resource Include="Items\Shoulders\shoulders_005.png" />
+    <Resource Include="Items\Shoulders\shoulders_006.png" />
+    <Resource Include="Items\Shoulders\shoulders_101.png" />
+    <Resource Include="Items\Shoulders\shoulders_102.png" />
+    <Resource Include="Items\Shoulders\shoulders_103.png" />
+    <Resource Include="Items\Shoulders\shoulders_104.png" />
+    <Resource Include="Items\Shoulders\shoulders_105.png" />
+    <Resource Include="Items\Shoulders\shoulders_201.png" />
+    <Resource Include="Items\Shoulders\shoulders_202.png" />
+    <Resource Include="Items\Shoulders\shoulders_203.png" />
+    <Resource Include="Items\Shoulders\shoulders_204.png" />
+    <Resource Include="Items\Shoulders\shoulders_205.png" />
+    <Resource Include="Items\Shoulders\shoulders_206.png" />
+    <Resource Include="Items\Shoulders\shoulders_207.png" />
+    <Resource Include="Items\Shoulders\shoulders_208.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_001.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_002.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_003.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_006.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_007.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_008.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_009.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_017.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_101.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_102.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_102_p3.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_103.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_01.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_01_p2.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_01_p3.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_02.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_02_p3.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_03.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_03_p3.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_05.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_06.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_07.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_08.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_09.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_10.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_11.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_12.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_13_p3.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_15.png" />
+    <Resource Include="Items\Shoulders\unique_shoulder_set_16.png" />
+    <Resource Include="Items\Shoulders\x1_shoulderpads_norm_season_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Spear\spear_001.png" />
+    <Resource Include="Items\Spear\spear_002.png" />
+    <Resource Include="Items\Spear\spear_003.png" />
+    <Resource Include="Items\Spear\spear_004.png" />
+    <Resource Include="Items\Spear\spear_005.png" />
+    <Resource Include="Items\Spear\spear_101.png" />
+    <Resource Include="Items\Spear\spear_102.png" />
+    <Resource Include="Items\Spear\spear_103.png" />
+    <Resource Include="Items\Spear\spear_104.png" />
+    <Resource Include="Items\Spear\spear_105.png" />
+    <Resource Include="Items\Spear\spear_201.png" />
+    <Resource Include="Items\Spear\spear_202.png" />
+    <Resource Include="Items\Spear\spear_203.png" />
+    <Resource Include="Items\Spear\spear_204.png" />
+    <Resource Include="Items\Spear\spear_205.png" />
+    <Resource Include="Items\Spear\spear_301.png" />
+    <Resource Include="Items\Spear\spear_302.png" />
+    <Resource Include="Items\Spear\unique_spear_001.png" />
+    <Resource Include="Items\Spear\unique_spear_002.png" />
+    <Resource Include="Items\Spear\unique_spear_003.png" />
+    <Resource Include="Items\Spear\unique_spear_004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Spirit_Stone\spiritstone_001.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_002.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_003.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_004.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_101.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_102.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_103.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_104.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_201.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_202.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_203.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_204.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_205.png" />
+    <Resource Include="Items\Spirit_Stone\spiritstone_206.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_001.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_002.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_003.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_004.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_005.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_006.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_007.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_008.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_009.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_101.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_102.png" />
+    <Resource Include="Items\Spirit_Stone\unique_spiritstone_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Staff\staffofcow.png" />
+    <Resource Include="Items\Staff\staffofcow_hell.png" />
+    <Resource Include="Items\Staff\staffofcow_inferno.png" />
+    <Resource Include="Items\Staff\staffofcow_nightmare.png" />
+    <Resource Include="Items\Staff\staff_001.png" />
+    <Resource Include="Items\Staff\staff_002.png" />
+    <Resource Include="Items\Staff\staff_003.png" />
+    <Resource Include="Items\Staff\staff_004.png" />
+    <Resource Include="Items\Staff\staff_005.png" />
+    <Resource Include="Items\Staff\staff_006.png" />
+    <Resource Include="Items\Staff\staff_007.png" />
+    <Resource Include="Items\Staff\staff_101.png" />
+    <Resource Include="Items\Staff\staff_102.png" />
+    <Resource Include="Items\Staff\staff_103.png" />
+    <Resource Include="Items\Staff\staff_104.png" />
+    <Resource Include="Items\Staff\staff_105.png" />
+    <Resource Include="Items\Staff\staff_106.png" />
+    <Resource Include="Items\Staff\staff_107.png" />
+    <Resource Include="Items\Staff\staff_201.png" />
+    <Resource Include="Items\Staff\staff_202.png" />
+    <Resource Include="Items\Staff\staff_203.png" />
+    <Resource Include="Items\Staff\staff_204.png" />
+    <Resource Include="Items\Staff\staff_205.png" />
+    <Resource Include="Items\Staff\staff_206.png" />
+    <Resource Include="Items\Staff\staff_207.png" />
+    <Resource Include="Items\Staff\staff_301.png" />
+    <Resource Include="Items\Staff\staff_302.png" />
+    <Resource Include="Items\Staff\unique_staff_001.png" />
+    <Resource Include="Items\Staff\unique_staff_002.png" />
+    <Resource Include="Items\Staff\unique_staff_003.png" />
+    <Resource Include="Items\Staff\unique_staff_006.png" />
+    <Resource Include="Items\Staff\unique_staff_007.png" />
+    <Resource Include="Items\Staff\unique_staff_008.png" />
+    <Resource Include="Items\Staff\unique_staff_009.png" />
+    <Resource Include="Items\Staff\unique_staff_101.png" />
+    <Resource Include="Items\Staff\unique_staff_102.png" />
+    <Resource Include="Items\Staff\unique_staff_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mace_2H\unique_mace_2h_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Sword_1H\sword_1h_001.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_002.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_003.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_004.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_005.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_006.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_007.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_008.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_101.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_102.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_103.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_104.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_105.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_106.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_107.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_108.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_201.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_202.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_203.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_204.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_205.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_206.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_207.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_208.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_301.png" />
+    <Resource Include="Items\Sword_1H\sword_1h_302.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_002.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_003.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_004.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_007.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_011.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_012.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_014.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_017.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_018.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_019.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_101.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_102.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_103.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_104.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_109.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_113.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_set_02.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_set_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Sword_2H\sword_2h_001.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_002.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_003.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_004.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_005.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_006.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_101.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_102.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_103.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_104.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_105.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_106.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_201.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_202.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_203.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_204.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_205.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_206.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_301.png" />
+    <Resource Include="Items\Sword_2H\sword_2h_302.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_001.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_002.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_003.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_004.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_007.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_008.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_010.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_011.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_012.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_101.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_102.png" />
+    <Resource Include="Items\Sword_2H\unique_sword_2h_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\TemplarSpecial\templar_special_001.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_002.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_101.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_102.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_103.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_104.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_201.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_202.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_203.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_204.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_205.png" />
+    <Resource Include="Items\TemplarSpecial\templar_special_206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Wand\unique_wand_002.png" />
+    <Resource Include="Items\Wand\unique_wand_003.png" />
+    <Resource Include="Items\Wand\unique_wand_006.png" />
+    <Resource Include="Items\Wand\unique_wand_009.png" />
+    <Resource Include="Items\Wand\unique_wand_010.png" />
+    <Resource Include="Items\Wand\unique_wand_012.png" />
+    <Resource Include="Items\Wand\unique_wand_013.png" />
+    <Resource Include="Items\Wand\unique_wand_018.png" />
+    <Resource Include="Items\Wand\unique_wand_101.png" />
+    <Resource Include="Items\Wand\unique_wand_102.png" />
+    <Resource Include="Items\Wand\wand_000.png" />
+    <Resource Include="Items\Wand\wand_001.png" />
+    <Resource Include="Items\Wand\wand_002.png" />
+    <Resource Include="Items\Wand\wand_003.png" />
+    <Resource Include="Items\Wand\wand_004.png" />
+    <Resource Include="Items\Wand\wand_005.png" />
+    <Resource Include="Items\Wand\wand_006.png" />
+    <Resource Include="Items\Wand\wand_007.png" />
+    <Resource Include="Items\Wand\wand_101.png" />
+    <Resource Include="Items\Wand\wand_102.png" />
+    <Resource Include="Items\Wand\wand_103.png" />
+    <Resource Include="Items\Wand\wand_104.png" />
+    <Resource Include="Items\Wand\wand_105.png" />
+    <Resource Include="Items\Wand\wand_106.png" />
+    <Resource Include="Items\Wand\wand_107.png" />
+    <Resource Include="Items\Wand\wand_201.png" />
+    <Resource Include="Items\Wand\wand_202.png" />
+    <Resource Include="Items\Wand\wand_203.png" />
+    <Resource Include="Items\Wand\wand_204.png" />
+    <Resource Include="Items\Wand\wand_205.png" />
+    <Resource Include="Items\Wand\wand_206.png" />
+    <Resource Include="Items\Wand\wand_207.png" />
+    <Resource Include="Items\Wand\wand_301.png" />
+    <Resource Include="Items\Wand\wand_302.png" />
+    <Resource Include="Items\Wand\wand_norm_unique_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_001.png" />
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_003.png" />
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_004.png" />
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_101.png" />
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_102.png" />
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_103.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_001.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_002.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_003.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_004.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_101.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_102.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_103.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_104.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_201.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_202.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_203.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_204.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_205.png" />
+    <Resource Include="Items\Wizard_Hat\wizardhat_206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_001.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_002.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_005.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_006.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_007.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_008.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_101.png" />
+    <Resource Include="Items\Voodoo_Mask\unique_voodoomask_102.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_001.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_002.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_003.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_004.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_101.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_102.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_103.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_104.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_201.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_202.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_203.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_204.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_205.png" />
+    <Resource Include="Items\Voodoo_Mask\voodoomask_206.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bow\unique_bow_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\LegendaryGem\unique_gem_018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Axe_1H\unique_axe_1h_102_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_06_p4.png" />
+    <Resource Include="Items\Belt\unique_belt_07_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_05_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_03_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_04_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_02_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_01_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Boots\unique_boots_set_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_101_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_102_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_103_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_104_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_105_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_106_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_107_p4.png" />
+    <Resource Include="Items\Bracer\unique_bracer_108_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Chest_Armor\unique_chest_set_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\CombatStaff\unique_combatstaff_2h_001_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Crossbow\unique_xbow_001_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Dagger\unique_dagger_101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Dagger\unique_dagger_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Fist_Weapon\unique_fist_102_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_2H\flail2h_norm_unique_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_2H\unique_flail_2h_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_2H\unique_flail_2h_set_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\HandXbow\unique_handxbow_001_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\HandXbow\unique_handxbow_01_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\HandXbow\unique_handxbow_02_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Helm\unique_helm_102_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Helm\unique_helm_103_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_104_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\MightyWeapon_2H\unique_mighty_2h_101_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mojo\unique_mojo_003_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mojo\unique_mojo_002_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Mojo\unique_mojo_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Orb\unique_orb_001_p4.png" />
+    <Resource Include="Items\Orb\unique_orb_002_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Orb\unique_orb_004_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Pants\unique_pants_set_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Polearm\unique_polearm_01_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Quiver\unique_quiver_001_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\unique_ring_01_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\unique_ring_02_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\unique_ring_03_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Shoulders\unique_shoulder_103_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Shoulders\unique_shoulder_set_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Sword_1H\unique_sword_1h_01_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Wand\wand_norm_unique_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Belt\unique_belt_007_p41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Flail_2H\unique_flail_2h_002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\unique_ring_01_p41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\unique_ring_02_p41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Helm\unique_helm_set_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Ring\unique_ring_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Amulet\unique_amulet_011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_102_p3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Amulet\amulet_norm_unique_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Boots\unique_boots_set_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Bracer\unique_bracer_108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Chest_Armor\unique_chest_set_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Dagger\unique_offhand_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\LegendaryGem\unique_gem_019.png" />
+    <Resource Include="Items\LegendaryGem\unique_gem_020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\MightyWeapon_1H\unique_mighty_1h_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Pants\unique_pants_set_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Staff\unique_staff_001_p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Staff\unique_staff_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Sword_1H\unique_sword_1h_021.png" />
+    <Resource Include="Items\Sword_1H\unique_sword_1h_107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Sword_2H\unique_sword_2h_103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Wizard_Hat\unique_wizardhat_104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\Crossbow\unique_xbow_102_p3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\CrusaderShield\unique_shield_103_p3.png" />
+    <Resource Include="Items\CrusaderShield\unique_shield_106.png" />
+    <Resource Include="Items\CrusaderShield\unique_shield_set_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\HandXbow\unique_handxbow_102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\EnchantressSpecial\followeritem_enchantress_legendary_01.png" />
+    <Resource Include="Items\EnchantressSpecial\followeritem_enchantress_legendary_02.png" />
+    <Resource Include="Items\EnchantressSpecial\followeritem_enchantress_legendary_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\ScoundrelSpecial\followeritem_scoundrel_legendary_01.png" />
+    <Resource Include="Items\ScoundrelSpecial\followeritem_scoundrel_legendary_02.png" />
+    <Resource Include="Items\ScoundrelSpecial\followeritem_scoundrel_legendary_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Items\TemplarSpecial\followeritem_templar_legendary_01.png" />
+    <Resource Include="Items\TemplarSpecial\followeritem_templar_legendary_02.png" />
+    <Resource Include="Items\TemplarSpecial\followeritem_templar_legendary_03.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
